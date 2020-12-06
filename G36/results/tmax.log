@@ -1,0 +1,459 @@
+
+                                  TetraMAX(R) 
+
+
+                 Version M-2016.12 for linux64 - Nov 21, 2016  
+
+                    Copyright (c) 1996 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+
+ Tcl mode is on by default. Use -notcl to run in native mode.
+ Executing startup file "/eda/synopsys/2016-17/RHELx86/TMAX_2016.12/admin/setup/tmaxtcl.rc".
+#=============================================================================#
+#                              Configuration                                  #
+#=============================================================================#
+set DESIGN_NAME      "riscv_core"
+riscv_core
+set NETLIST_FILES    [list "../gate/$DESIGN_NAME.gate.v"]
+../gate/riscv_core.gate.v
+set LIBRARY_FILES    [list "../gate/NangateOpenCellLibrary.tlib"]
+../gate/NangateOpenCellLibrary.tlib
+#=============================================================================#
+#                           Read Design & Technology files                    #
+#=============================================================================#
+# Rules to be ignored
+set_rules B7  ignore    ;# undriven module output pin
+set_rules B8  ignore    ;# unconnected module input pin
+set_rules B9  ignore    ;# undriven module internal net
+set_rules B10 ignore    ;# unconnected module internal net
+set_rules N20 ignore    ;# underspecified UDP
+set_rules N21 ignore    ;# unsupported UDP entry
+set_rules N23 ignore    ;# inconsistent UDP
+# Reset TMAX
+reset_all
+ Warning: All netlist and library module data are now deleted. (M41)
+build -force
+read_netlist -delete
+ Warning: All netlist and library module data are now deleted. (M41)
+set_netlist -sequential_modeling
+# Read library files
+foreach lib_file $LIBRARY_FILES {
+    read_netlist $lib_file
+}
+ Begin reading netlist ( ../gate/NangateOpenCellLibrary.tlib )...
+ End parsing Verilog file ../gate/NangateOpenCellLibrary.tlib with 0 errors.
+ End reading netlist: #modules=181, top=AND2_X1, #lines=2744, CPU_time=0.01 sec, Memory=0MB
+# Read gate level netlist
+foreach design_file $NETLIST_FILES {
+    read_netlist $design_file
+}
+ Begin reading netlist ( ../gate/riscv_core.gate.v )...
+ End parsing Verilog file ../gate/riscv_core.gate.v with 0 errors.
+ End reading netlist: #modules=51, top=riscv_core, #lines=33644, CPU_time=0.14 sec, Memory=10MB
+# Remove unused net connections
+remove_net_connection -all
+# Build the model
+run_build_model $DESIGN_NAME
+ ------------------------------------------------------------------------------
+ Begin build model for topcut = riscv_core ...
+ ------------------------------------------------------------------------------
+ There were 66201 primitives and 534 faultable pins removed during model optimizations
+ Warning: Rule B7 (undriven module output pin) was violated 139 times.
+ Warning: Rule B8 (unconnected module input pin) was violated 107 times.
+ Warning: Rule B9 (undriven module internal net) was violated 17 times.
+ Warning: Rule B10 (unconnected module internal net) was violated 133 times.
+ Warning: Rule N20 (underspecified UDP) was violated 5 times.
+ End build model: #primitives=44364, CPU_time=0.21 sec, Memory=18MB
+ ------------------------------------------------------------------------------
+ Begin learning analyses...
+ End learning analyses, total learning CPU time=0.59 sec.
+ ------------------------------------------------------------------------------
+#=============================================================================#
+#                                    Run DRC                                  #
+#=============================================================================#
+add_po_masks -all
+remove_po_masks instr_req_o
+remove_po_masks instr_addr_o[31]
+remove_po_masks instr_addr_o[30]
+remove_po_masks instr_addr_o[29]
+remove_po_masks instr_addr_o[28]
+remove_po_masks instr_addr_o[27]
+remove_po_masks instr_addr_o[26]
+remove_po_masks instr_addr_o[25]
+remove_po_masks instr_addr_o[24]
+remove_po_masks instr_addr_o[23]
+remove_po_masks instr_addr_o[22]
+remove_po_masks instr_addr_o[21]
+remove_po_masks instr_addr_o[20]
+remove_po_masks instr_addr_o[19]
+remove_po_masks instr_addr_o[18]
+remove_po_masks instr_addr_o[17]
+remove_po_masks instr_addr_o[16]
+remove_po_masks instr_addr_o[15]
+remove_po_masks instr_addr_o[14]
+remove_po_masks instr_addr_o[13]
+remove_po_masks instr_addr_o[12]
+remove_po_masks instr_addr_o[11]
+remove_po_masks instr_addr_o[10]
+remove_po_masks instr_addr_o[9]
+remove_po_masks instr_addr_o[8]
+remove_po_masks instr_addr_o[7]
+remove_po_masks instr_addr_o[6]
+remove_po_masks instr_addr_o[5]
+remove_po_masks instr_addr_o[4]
+remove_po_masks instr_addr_o[3]
+remove_po_masks instr_addr_o[2]
+remove_po_masks instr_addr_o[1]
+remove_po_masks instr_addr_o[0]
+remove_po_masks data_req_o
+remove_po_masks data_we_o
+remove_po_masks data_be_o[3]
+remove_po_masks data_be_o[2]
+remove_po_masks data_be_o[1]
+remove_po_masks data_be_o[0]
+remove_po_masks data_addr_o[31]
+remove_po_masks data_addr_o[30]
+remove_po_masks data_addr_o[29]
+remove_po_masks data_addr_o[28]
+remove_po_masks data_addr_o[27]
+remove_po_masks data_addr_o[26]
+remove_po_masks data_addr_o[25]
+remove_po_masks data_addr_o[24]
+remove_po_masks data_addr_o[23]
+remove_po_masks data_addr_o[22]
+remove_po_masks data_addr_o[21]
+remove_po_masks data_addr_o[20]
+remove_po_masks data_addr_o[19]
+remove_po_masks data_addr_o[18]
+remove_po_masks data_addr_o[17]
+remove_po_masks data_addr_o[16]
+remove_po_masks data_addr_o[15]
+remove_po_masks data_addr_o[14]
+remove_po_masks data_addr_o[13]
+remove_po_masks data_addr_o[12]
+remove_po_masks data_addr_o[11]
+remove_po_masks data_addr_o[10]
+remove_po_masks data_addr_o[9]
+remove_po_masks data_addr_o[8]
+remove_po_masks data_addr_o[7]
+remove_po_masks data_addr_o[6]
+remove_po_masks data_addr_o[5]
+remove_po_masks data_addr_o[4]
+remove_po_masks data_addr_o[3]
+remove_po_masks data_addr_o[2]
+remove_po_masks data_addr_o[1]
+remove_po_masks data_addr_o[0]
+remove_po_masks data_wdata_o[31]
+remove_po_masks data_wdata_o[30]
+remove_po_masks data_wdata_o[29]
+remove_po_masks data_wdata_o[28]
+remove_po_masks data_wdata_o[27]
+remove_po_masks data_wdata_o[26]
+remove_po_masks data_wdata_o[25]
+remove_po_masks data_wdata_o[24]
+remove_po_masks data_wdata_o[23]
+remove_po_masks data_wdata_o[22]
+remove_po_masks data_wdata_o[21]
+remove_po_masks data_wdata_o[20]
+remove_po_masks data_wdata_o[19]
+remove_po_masks data_wdata_o[18]
+remove_po_masks data_wdata_o[17]
+remove_po_masks data_wdata_o[16]
+remove_po_masks data_wdata_o[15]
+remove_po_masks data_wdata_o[14]
+remove_po_masks data_wdata_o[13]
+remove_po_masks data_wdata_o[12]
+remove_po_masks data_wdata_o[11]
+remove_po_masks data_wdata_o[10]
+remove_po_masks data_wdata_o[9]
+remove_po_masks data_wdata_o[8]
+remove_po_masks data_wdata_o[7]
+remove_po_masks data_wdata_o[6]
+remove_po_masks data_wdata_o[5]
+remove_po_masks data_wdata_o[4]
+remove_po_masks data_wdata_o[3]
+remove_po_masks data_wdata_o[2]
+remove_po_masks data_wdata_o[1]
+remove_po_masks data_wdata_o[0]
+# Allow ATPG to use nonscan cell values loaded by the last shift.
+#set_drc -load_nonscan_cells
+# Report settings
+report_settings drc
+ drc =             test_proc_file=none,
+                   allow_unstable_set_resets=no, bidi_control_pin=no, clock=any,
+                   controller_clock=no, disturb_clock_grouping=yes, disturb_limits=1000 20,
+                   initialize_dff_dlat=X, multi_captures_per_load=yes, oscillation=500,
+                   remove_false_clocks=no, chain_trace=none, extract_cascaded_clock_gating=no, spc_chain =none,
+                   shadows=on, limit_shadow=none,
+                   skew=1, TLAs=yes, trace=off,
+                   store_setup=no, store_stability_patterns=no, store_unload_mode_data=no,
+                   store_setup_cycles=no,
+                   unstable_lsrams=no, compressor_debug_data=no,
+                   dslave_remodel=yes, reclassify_invalid_dslaves=yes,
+                   constraints=yes, z_check_with_all_constraints=no,
+                   use_cell_constraints=yes, clockdrc_use_cell_constraints=no,
+                   clock_constraints=none, internal_clock_timing=default,
+                   seq_comp_accumulator_mode=no,
+                   seq_comp_extend_test_setup=no,
+                   set_unload_mode_ports_to_x=yes,
+                   seq_comp_jtag_lbist_mode=off,
+                   multiple_pipes_per_port=no,
+                   dftmax_shift_cycles=0,
+                   load_nonscan_cells=no,
+                   store_full_cycles=NO_PROC,
+                   analyze_drc_violation=off
+                   blockage_aware_clock_grouping=no,
+                   regular_scan_shift_cycles=0,
+                   seq_comp_power_mode=no -all,
+                   dynamic_clock_equivalencing=off, scan_shift_clocks=none,
+                   fast_multifrequency_capture=spf, multiframe_paths=yes,
+                   observe_procedure=any, clock_gating_init_cycles_integer=0,
+                   pll_launch_on_shift=no, num_pll_cycles=0,
+                   check_multiple_shift_clocks=no,
+                   max_pll_simulation_passes=100, pll_simulate_test_setup=no,
+                   pipeline=no, pipeline_in_compressor=yes,
+                   report_x_sink=no, xchain_threshold_probability=0,
+                   freerunning_expansion=yes,
+                   allow_clocks_as_scan=no;
+                   check_user_serializer_bits=yes;
+                   lockup_after_compressor=no;
+                   independent_sync_clocks=no;
+# Run DRC
+#run_drc $SPF_FILE
+run_drc
+ ------------------------------------------------------------------------------
+ Begin scan design rules checking...
+ ------------------------------------------------------------------------------
+ Begin simulating test protocol procedures...
+ Test protocol simulation completed, CPU time=0.00 sec.
+ ------------------------------------------------------------------------------
+ Begin scan chain operation checking...
+ Scan chain operation checking completed, CPU time=0.00 sec.
+ ------------------------------------------------------------------------------
+ Begin clock rules checking...
+ Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 1300 times.
+ Warning: Rule C25 (unstable cell clock input connected from multiple sources) was violated 2257 times.
+ Clock rules checking completed, CPU time=0.23 sec.
+ ------------------------------------------------------------------------------
+ Begin nonscan rules checking...
+ Nonscan cell summary: #DFF=1300  #DLAT=1025  #RAM_outs=0  tla_usage_type=no_clock_tla
+ Nonscan behavior:  #CU=1300  #TLA=1025
+ Nonscan rules checking completed, CPU time=0.00 sec.
+ ------------------------------------------------------------------------------
+ Begin DRC dependent learning...
+ Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.01 sec
+ DRC dependent learning completed, CPU time=0.10 sec.
+ ------------------------------------------------------------------------------
+ DRC Summary Report
+ ------------------------------------------------------------------------------
+ Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 1300 times.
+ Warning: Rule C25 (unstable cell clock input connected from multiple sources) was violated 2257 times.
+ There were 3557 violations that occurred during DRC process.
+ Design rules checking was successful, total CPU time=0.34 sec.
+ ------------------------------------------------------------------------------
+#=============================================================================#
+#                               Fault Simulation                              #
+#=============================================================================#
+set_patterns -external dumpports_rtl.$DESIGN_NAME.vcde -sensitive -strobe_period { 40 ns } -strobe_offset { 698 ns }
+ End reading 80441 patterns, CPU_time = 1.09 sec, Memory = 23MB
+run_simulation -sequential -sequential_update
+ Begin sequential simulation of 80441 external patterns.
+ Warning: Expected values will be updated for all simulated patterns.
+ Simulation completed: #patterns=80441/160909, #fail_pats=0(0), #failing_meas=0(0), #rejected_pats=0, CPU time=69.17
+set_faults -model stuck
+#add_faults -all
+read_faults initial_fault_list.txt -add -force_retain_code
+ Warning: 61437 invalid fault codes were ignored (first occ. at line 2). (M107)
+ 161036 faults were read in and 161036 new faults were added to fault list.
+set_simulation -num_processes 10
+run_fault_sim -sequential
+ Starting parallel fault simulation with 10 processes. (M733)
+ -----------------------------------------------------------
+ #faults    pass #faults   cum. #faults     test    process
+ simulated  detect/total   detect/active  coverage  CPU time
+ ---------  -------------  -------------  --------  --------
+ 18086       13260  18086   13260 147776     8.08%    503.05
+ 19936         709   1850   13969 147067     8.53%    585.64
+ 21374         739   1438   14708 146328     8.99%    612.27
+ 23173        1341   1799   16049 144987     9.83%    647.89
+ 24943         930   1770   16979 144057    10.41%    679.27
+ 26723         399   1780   17378 143658    10.68%    694.70
+ 28361         665   1638   18043 142993    11.10%    720.79
+ 30030         443   1669   18486 142550    11.40%    722.44
+ 31621         390   1591   18876 142160    11.65%    726.99
+ 33208        2759   1587   21635 139401    13.37%    823.58
+ 34930        3484   1722   25119 135917    15.54%   1123.60
+ 36633        1143   1703   26262 134774    16.26%   1200.35
+ 38253        1436   1620   27698 133338    17.16%   1368.61
+ 39805         883   1552   28581 132455    17.73%   1483.86
+ 41320        1548   1515   30129 130907    18.72%   1536.70
+ 42952         597   1632   30726 130310    19.09%   1558.98
+ 44433         781   1481   31507 129529    19.59%   1591.69
+ 46136         532   1703   32039 128997    19.95%   1606.15
+ 47670         980   1534   33019 128017    20.55%   1732.11
+ 49067        4009   1397   37028 124008    23.06%   2178.61
+ 50420         778   1353   37806 123230    23.55%   2255.03
+ 51905         777   1485   38583 122453    24.05%   2299.18
+ 53506         958   1601   39541 121495    24.67%   2345.66
+ 55256         160   1750   39701 121335    24.77%   2359.19
+ 56862         426   1606   40127 120909    25.03%   2416.29
+ 58563        1141   1701   41268 119768    25.86%   2522.12
+ 60165         891   1602   42159 118877    26.43%   2576.96
+ 61640        2816   1475   44975 116061    28.18%   2679.68
+ 63028         981   1388   45956 115080    28.81%   2722.05
+ 64991         503   1963   46459 114577    29.12%   2837.07
+ 66649        3855   1658   50314 110722    31.54%   3015.75
+ 67947         261   1298   50575 110461    31.70%   3047.36
+ 69645         238   1698   50813 110223    31.85%   3087.79
+ 70999        1706   1354   52519 108517    32.93%   3257.34
+ 72340         140   1341   52659 108377    33.02%   3287.07
+ 73718        1965   1378   54624 106412    34.25%   3308.81
+ 75217        1271   1499   55895 105141    35.07%   3339.27
+ 76426         989   1209   56884 104152    35.70%   3426.10
+ 78156        2717   1730   59601 101435    37.40%   3503.07
+ 79741         771   1585   60372 100664    37.88%   3601.82
+ 81326        2021   1585   62393  98643    39.13%   3788.45
+ 82968        2163   1642   64556  96480    40.49%   3865.20
+ 84192        1270   1224   65826  95210    41.29%   3909.05
+ 85587        1126   1395   66952  94084    42.01%   3976.53
+ 86925         819   1338   67771  93265    42.53%   4029.72
+ 88409         924   1484   68695  92341    43.10%   4152.00
+ 89978         516   1569   69211  91825    43.43%   4174.87
+ 91304        1305   1326   70516  90520    44.25%   4278.03
+ 92943         201   1639   70717  90319    44.39%   4286.48
+ 94235        1750   1292   72467  88569    45.48%   4474.19
+ 95932        1417   1697   73884  87152    46.36%   4523.03
+ 97128        1678   1196   75562  85474    47.41%   4628.09
+ 98191        1383   1063   76945  84091    48.27%   4755.31
+ 99722         787   1531   77732  83304    48.77%   4807.79
+ 100901        542   1179   78274  82762    49.11%   4925.25
+ 102193        767   1292   79041  81995    49.61%   4952.58
+ 102998       1363    805   80404  80632    50.46%   5026.08
+ 104640        841   1642   81245  79791    50.99%   5106.93
+ 105458        550    818   81795  79241    51.34%   5152.77
+ 106976        824   1518   82619  78417    51.87%   5213.69
+ 108345       3404   1369   86023  75013    54.01%   5575.12
+ 109518        738   1173   86761  74275    54.47%   5696.16
+ 110871       1023   1353   87784  73252    55.11%   5801.34
+ 112028         22   1157   87806  73230    55.12%   5804.68
+ 113107        217   1079   88023  73013    55.29%   5819.92
+ 114267       1917   1160   89940  71096    56.47%   5927.06
+ 115233        864    966   90804  70232    57.02%   6035.49
+ 116574       1035   1341   91839  69197    57.67%   6160.61
+ 117595       1033   1021   92872  68164    58.32%   6301.58
+ 119316        846   1721   93718  67318    58.85%   6342.88
+ 120016       1579    700   95297  65739    59.83%   6679.53
+ 120849        182    833   95479  65557    59.95%   6697.18
+ 122378       1513   1529   96992  64044    60.91%   6760.67
+ 123358        106    980   97098  63938    60.97%   6795.34
+ 124414        851   1056   97949  63087    61.52%   6977.70
+ 125348        200    934   98149  62887    61.64%   6999.72
+ 126801       1179   1453   99328  61708    62.38%   7047.26
+ 128255       1696   1454  101024  60012    63.46%   7238.26
+ 129482       1284   1227  102308  58728    64.26%   7317.38
+ 130711        648   1229  102956  58080    64.68%   7394.03
+ 131731        518   1020  103474  57562    65.00%   7621.85
+ 133094       1414   1363  104888  56148    65.88%   7756.50
+ 134167        107   1073  104995  56041    65.95%   7777.52
+ 135169       1128   1002  106123  54913    66.66%   7886.68
+ 136371       2183   1202  108306  52730    68.02%   8003.59
+ 137413        995   1042  109301  51735    68.64%   8105.25
+ 138658        301   1245  109602  51434    68.83%   8170.02
+ 140129       2129   1471  111731  49305    70.20%   8341.63
+ 141306        832   1177  112563  48473    70.72%   8405.84
+ 142231        202    925  112765  48271    70.86%   8431.28
+ 142952        297    721  113062  47974    71.04%   8538.15
+ 144087       1096   1135  114158  46878    71.73%   8710.78
+ 145257        858   1170  115016  46020    72.26%   8750.50
+ 146148        981    891  115997  45039    72.88%   8783.86
+ 147143       1596    995  117593  43443    73.88%   8976.48
+ 147639        519    496  118112  42924    74.20%   9044.19
+ 148750        704   1111  118816  42220    74.65%   9177.71
+ 149557       1952    807  120768  40268    75.89%   9439.26
+ 149985        256    428  121024  40012    76.05%   9532.57
+ 150307        150    322  121174  39862    76.14%   9571.93
+ 150832        609    525  121783  39253    76.52%   9708.87
+ 151451        271    619  122054  38982    76.69%   9768.65
+ 151961        247    510  122301  38735    76.85%   9829.52
+ 152211        793    250  123094  37942    77.34%  10139.42
+ 152211         37      0  123131  37905    77.37%  10204.76
+ 152831        288    620  123419  37617    77.55%  10280.75
+ 152883        323     52  123742  37294    77.75%  10538.66
+ 153556        262    673  124004  37032    77.94%  10681.02
+ 153734        100    178  124104  36932    78.00%  10800.16
+ 153734        111      0  124215  36821    78.07%  10906.50
+ 153808        220     74  124435  36601    78.21%  11074.43
+ 154079         64    271  124499  36537    78.25%  11129.07
+ 154091        380     12  124879  36157    78.48%  11444.48
+ 154610        202    519  125081  35955    78.61%  11525.94
+ 155050        266    440  125347  35689    78.78%  11877.04
+ 155108         64     58  125411  35625    78.82%  11959.80
+ 155608        220    500  125631  35405    78.98%  12118.71
+ 155608         26      0  125657  35379    78.99%  12314.49
+ 155820        211    212  125868  35168    79.12%  12437.22
+ 156008        125    188  125993  35043    79.20%  12527.64
+ 156010         73      2  126066  34970    79.25%  12778.76
+ 156074         36     64  126102  34934    79.27%  12816.82
+ 156102         34     28  126136  34900    79.29%  13092.06
+ 156102          6      0  126142  34894    79.30%  13371.56
+ 156567        145    465  126287  34749    79.39%  13539.24
+ 156605         29     38  126316  34720    79.40%  13574.03
+ 156653        132     48  126448  34588    79.49%  13756.44
+ 156657         73      4  126521  34515    79.53%  13780.12
+ 156657         29      0  126550  34486    79.55%  13903.43
+ 156659         92      2  126642  34394    79.61%  14155.60
+ 156811         76    152  126718  34318    79.65%  14189.48
+ 157032        137    221  126855  34181    79.74%  14567.61
+ 157314          9    282  126864  34172    79.74%  14790.67
+ 157314          5      0  126869  34167    79.75%  14833.16
+ 157942        242    628  127111  33925    79.90%  14893.06
+ 158069         28    127  127139  33897    79.92%  15024.46
+ 158069        992      0  128131  32905    80.23%  15621.87
+ 158069          2      0  128133  32903    80.23%  16069.14
+     Uncollapsed Stuck Fault Summary Report
+ -----------------------------------------------
+ fault class                     code   #faults
+ ------------------------------  ----  ---------
+ Detected                         DT     127800
+ Possibly detected                PT       2258
+ Undetectable                     UD        333
+ ATPG untestable                  AU          0
+ Not detected                     ND      30645
+ -----------------------------------------------
+ total faults                            161036
+ test coverage                            80.23%
+ -----------------------------------------------
+ Fault simulation completed: #faults_simulated=158069, CPU time=17252.41
+ Memory usage summary: total=889.45MB
+ End parallel fault simulation: Elapsed time=17252.39 sec, Memory=889.45MB.
+# # Create reports
+report_summaries
+     Uncollapsed Stuck Fault Summary Report
+ -----------------------------------------------
+ fault class                     code   #faults
+ ------------------------------  ----  ---------
+ Detected                         DT     127800
+ Possibly detected                PT       2258
+ Undetectable                     UD        333
+ ATPG untestable                  AU          0
+ Not detected                     ND      30645
+ -----------------------------------------------
+ total faults                            161036
+ test coverage                            80.23%
+ -----------------------------------------------
+            Pattern Summary Report
+ -----------------------------------------------
+ #internal patterns                           0
+ #external patterns (dumpports_rtl.riscv_core.vcde)  80441
+     #full_sequential patterns            80441
+ -----------------------------------------------
+write_faults output_fault_list.txt -all -replace
+ Write faults completed: 161036 faults were written into file "output_fault_list.txt".
+report_faults -level {100 1} -verbose > report_faults_verbose.txt
+report_faults -level {5 100} > report_faults.txt
+# 
+quit
