@@ -15,10 +15,19 @@ else
 	exit
 fi
 
-echo "file correclty read '${input}'"
+output="rev_${input}"
 
-#output="rev_${input}"
 
+
+#test="sw x14,168(x3)"
+
+#[[ $test =~ ^[[:space:]]*(sw|SW)[[:space:]]+([a-zA-Z0-9]+)[[:space:]]*,[[:space:]]*([0-9]+)\(([a-zA-Z0-9]+) ]]
+#echo $?
+#echo ${BASH_REMATCH[0]} sw x14,168(x3
+#echo ${BASH_REMATCH[1]} sw
+#echo ${BASH_REMATCH[2]} x14
+#echo ${BASH_REMATCH[3]} 168
+#echo ${BASH_REMATCH[4]} x3
 
 while IFS= read -r line
 do
@@ -31,9 +40,9 @@ do
 		offset=${BASH_REMATCH[3]}
 		regb=${BASH_REMATCH[4]}
 		
-
-	#else
-	#	echo $line >> ${output}
+		echo "sw s5, 1(s11)" >> ${output}
+	else
+		echo $line >> ${output}
 	fi
  
 done < "$input"
