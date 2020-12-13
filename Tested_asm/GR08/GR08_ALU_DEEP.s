@@ -490,6 +490,8 @@ num9:
 #include "GR08_TEST_INSERT.s"
 #include "GR08_TEST_COMPVI.s"
 #include "GR08_TEST_CLIP.s"
+#include "GR08_TEST_CLB.s"
+#include "GR08_TEST_ROR.s"
 //TEST_ALU_imm(0xFFFFFFFF, 0x00000000)
 li s1, 0xFFFFFFFF
 ADDI s3,s1,0x00000000
