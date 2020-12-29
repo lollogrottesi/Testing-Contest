@@ -9,7 +9,7 @@
 //RVTEST_CODE_BEGIN
 
 
-li s11, 0x00200000 //x28
+li s11, 0x00200000 //x27
 
 
 li x1,0x00000000
