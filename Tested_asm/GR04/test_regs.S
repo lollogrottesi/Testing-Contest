@@ -253,15 +253,15 @@ sw x28,108(s11)
 sw x29,112(s11)
 sw x30,116(s11)
 sw x31,120(s11)
-/*
-li x1,0xFFFFFFFF
+
+//li x1,0xFFFFFFFF
 li x2,0xFFFFFFFF
 li x3,0xFFFFFFFF
 li x4,0xFFFFFFFF
 li x5,0xFFFFFFFF
 li x6,0xFFFFFFFF
 li x7,0xFFFFFFFF
-li x8,0xFFFFFFFF
+//li x8,0xFFFFFFFF
 li x9,0xFFFFFFFF
 li x10,0xFFFFFFFF
 li x11,0xFFFFFFFF
@@ -269,7 +269,7 @@ li x12,0xFFFFFFFF
 li x13,0xFFFFFFFF
 li x14,0xFFFFFFFF
 li x15,0xFFFFFFFF
-li x16,0xFFFFFFFF
+//li x16,0xFFFFFFFF
 li x17,0xFFFFFFFF
 
 sw x1,0(s11)
@@ -290,7 +290,7 @@ sw x15,56(s11)
 sw x16,60(s11)
 sw x17,64(s11)
 
-*/
+
 li x18,0xFFFFFFFF
 li x19,0xFFFFFFFF
 li x20,0xFFFFFFFF
