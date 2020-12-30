@@ -271,6 +271,22 @@ li x14,0xFFFFFFFF
 li x15,0xFFFFFFFF
 //li x16,0xFFFFFFFF
 li x17,0xFFFFFFFF
+li x18,0xFFFFFFFF
+li x19,0xFFFFFFFF
+li x20,0xFFFFFFFF
+li x21,0xFFFFFFFF
+li x23,0xFFFFFFFF
+li x24,0xFFFFFFFF
+li x25,0xFFFFFFFF
+li x26,0xFFFFFFFF
+li x28, 0x00200000 //x28
+li x27,0xFFFFFFFF
+sw x27,104(x28)
+li s11, 0x00200000 //x27
+li x28,0xFFFFFFFF
+li x29,0xFFFFFFFF
+li x30,0xFFFFFFFF
+li x31,0xFFFFFFFF
 
 sw x1,0(s11)
 sw x2,4(s11)
@@ -291,22 +307,22 @@ sw x16,60(s11)
 sw x17,64(s11)
 
 
-li x18,0xFFFFFFFF
-li x19,0xFFFFFFFF
-li x20,0xFFFFFFFF
-li x21,0xFFFFFFFF
-li x23,0xFFFFFFFF
-li x24,0xFFFFFFFF
-li x25,0xFFFFFFFF
-li x26,0xFFFFFFFF
-li x28, 0x00200000 //x28
-li x27,0xFFFFFFFF
-sw x27,104(x28)
-li s11, 0x00200000 //x27
-li x28,0xFFFFFFFF
-li x29,0xFFFFFFFF
-li x30,0xFFFFFFFF
-li x31,0xFFFFFFFF
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+						
+				 
+			   
+						
+				 
+				 
+				 
+				 
 
 
 sw x18,68(s11)
