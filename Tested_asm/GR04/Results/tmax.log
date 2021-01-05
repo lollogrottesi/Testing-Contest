@@ -1,0 +1,632 @@
+## Build and DRC
+read_netlist ../gate/NangateOpenCellLibrary.tlib -library
+ Begin reading netlist ( ../gate/NangateOpenCellLibrary.tlib )...
+ End parsing Verilog file ../gate/NangateOpenCellLibrary.tlib with 0 errors.
+ End reading netlist: #modules=181, top=AND2_X1, #lines=2744, CPU_time=0.02 sec, Memory=0MB
+read_netlist ../gate/riscv_core.v
+ Begin reading netlist ( ../gate/riscv_core.v )...
+ End parsing Verilog file ../gate/riscv_core.v with 0 errors.
+ End reading netlist: #modules=127, top=riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800, #lines=53910, CPU_time=0.30 sec, Memory=18MB
+run_build_model riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800
+ ------------------------------------------------------------------------------
+ Begin build model for topcut = riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800 ...
+ ------------------------------------------------------------------------------
+ Warning: There were 72 faultable pins lost due to tied gate optimizations. (M126)
+ There were 104908 primitives and 1725 faultable pins removed during model optimizations
+ Warning: Rule B7 (undriven module output pin) was violated 463 times.
+ Warning: Rule B8 (unconnected module input pin) was violated 429 times.
+ Warning: Rule B9 (undriven module internal net) was violated 31 times.
+ Warning: Rule B10 (unconnected module internal net) was violated 459 times.
+ Warning: Rule N20 (underspecified UDP) was violated 7 times.
+ End build model: #primitives=65718, CPU_time=0.63 sec, Memory=30MB
+ ------------------------------------------------------------------------------
+ Begin learning analyses...
+ End learning analyses, total learning CPU time=1.25 sec.
+ ------------------------------------------------------------------------------
+add_po_masks -all
+remove_po_masks instr_req_o
+remove_po_masks instr_addr_o[31]
+remove_po_masks instr_addr_o[30]
+remove_po_masks instr_addr_o[29]
+remove_po_masks instr_addr_o[28]
+remove_po_masks instr_addr_o[27]
+remove_po_masks instr_addr_o[26]
+remove_po_masks instr_addr_o[25]
+remove_po_masks instr_addr_o[24]
+remove_po_masks instr_addr_o[23]
+remove_po_masks instr_addr_o[22]
+remove_po_masks instr_addr_o[21]
+remove_po_masks instr_addr_o[20]
+remove_po_masks instr_addr_o[19]
+remove_po_masks instr_addr_o[18]
+remove_po_masks instr_addr_o[17]
+remove_po_masks instr_addr_o[16]
+remove_po_masks instr_addr_o[15]
+remove_po_masks instr_addr_o[14]
+remove_po_masks instr_addr_o[13]
+remove_po_masks instr_addr_o[12]
+remove_po_masks instr_addr_o[11]
+remove_po_masks instr_addr_o[10]
+remove_po_masks instr_addr_o[9]
+remove_po_masks instr_addr_o[8]
+remove_po_masks instr_addr_o[7]
+remove_po_masks instr_addr_o[6]
+remove_po_masks instr_addr_o[5]
+remove_po_masks instr_addr_o[4]
+remove_po_masks instr_addr_o[3]
+remove_po_masks instr_addr_o[2]
+remove_po_masks instr_addr_o[1]
+remove_po_masks instr_addr_o[0]
+remove_po_masks data_req_o
+remove_po_masks data_we_o
+remove_po_masks data_be_o[3]
+remove_po_masks data_be_o[2]
+remove_po_masks data_be_o[1]
+remove_po_masks data_be_o[0]
+remove_po_masks data_addr_o[31]
+remove_po_masks data_addr_o[30]
+remove_po_masks data_addr_o[29]
+remove_po_masks data_addr_o[28]
+remove_po_masks data_addr_o[27]
+remove_po_masks data_addr_o[26]
+remove_po_masks data_addr_o[25]
+remove_po_masks data_addr_o[24]
+remove_po_masks data_addr_o[23]
+remove_po_masks data_addr_o[22]
+remove_po_masks data_addr_o[21]
+remove_po_masks data_addr_o[20]
+remove_po_masks data_addr_o[19]
+remove_po_masks data_addr_o[18]
+remove_po_masks data_addr_o[17]
+remove_po_masks data_addr_o[16]
+remove_po_masks data_addr_o[15]
+remove_po_masks data_addr_o[14]
+remove_po_masks data_addr_o[13]
+remove_po_masks data_addr_o[12]
+remove_po_masks data_addr_o[11]
+remove_po_masks data_addr_o[10]
+remove_po_masks data_addr_o[9]
+remove_po_masks data_addr_o[8]
+remove_po_masks data_addr_o[7]
+remove_po_masks data_addr_o[6]
+remove_po_masks data_addr_o[5]
+remove_po_masks data_addr_o[4]
+remove_po_masks data_addr_o[3]
+remove_po_masks data_addr_o[2]
+remove_po_masks data_addr_o[1]
+remove_po_masks data_addr_o[0]
+remove_po_masks data_wdata_o[31]
+remove_po_masks data_wdata_o[30]
+remove_po_masks data_wdata_o[29]
+remove_po_masks data_wdata_o[28]
+remove_po_masks data_wdata_o[27]
+remove_po_masks data_wdata_o[26]
+remove_po_masks data_wdata_o[25]
+remove_po_masks data_wdata_o[24]
+remove_po_masks data_wdata_o[23]
+remove_po_masks data_wdata_o[22]
+remove_po_masks data_wdata_o[21]
+remove_po_masks data_wdata_o[20]
+remove_po_masks data_wdata_o[19]
+remove_po_masks data_wdata_o[18]
+remove_po_masks data_wdata_o[17]
+remove_po_masks data_wdata_o[16]
+remove_po_masks data_wdata_o[15]
+remove_po_masks data_wdata_o[14]
+remove_po_masks data_wdata_o[13]
+remove_po_masks data_wdata_o[12]
+remove_po_masks data_wdata_o[11]
+remove_po_masks data_wdata_o[10]
+remove_po_masks data_wdata_o[9]
+remove_po_masks data_wdata_o[8]
+remove_po_masks data_wdata_o[7]
+remove_po_masks data_wdata_o[6]
+remove_po_masks data_wdata_o[5]
+remove_po_masks data_wdata_o[4]
+remove_po_masks data_wdata_o[3]
+remove_po_masks data_wdata_o[2]
+remove_po_masks data_wdata_o[1]
+remove_po_masks data_wdata_o[0]
+run_drc
+ ------------------------------------------------------------------------------
+ Begin scan design rules checking...
+ ------------------------------------------------------------------------------
+ Begin simulating test protocol procedures...
+ Test protocol simulation completed, CPU time=0.00 sec.
+ ------------------------------------------------------------------------------
+ Begin scan chain operation checking...
+ Scan chain operation checking completed, CPU time=0.00 sec.
+ ------------------------------------------------------------------------------
+ Begin clock rules checking...
+ Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 2130 times.
+ Warning: Rule C25 (unstable cell clock input connected from multiple sources) was violated 3225 times.
+ Clock rules checking completed, CPU time=0.44 sec.
+ ------------------------------------------------------------------------------
+ Begin nonscan rules checking...
+ Nonscan cell summary: #DFF=2130  #DLAT=1097  #RAM_outs=0  tla_usage_type=no_clock_tla
+ Nonscan behavior:  #CU=2130  #TLA=1097
+ Nonscan rules checking completed, CPU time=0.00 sec.
+ ------------------------------------------------------------------------------
+ Begin DRC dependent learning...
+ Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.02 sec
+ DRC dependent learning completed, CPU time=0.20 sec.
+ ------------------------------------------------------------------------------
+ DRC Summary Report
+ ------------------------------------------------------------------------------
+ Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 2130 times.
+ Warning: Rule C25 (unstable cell clock input connected from multiple sources) was violated 3225 times.
+ There were 5355 violations that occurred during DRC process.
+ Design rules checking was successful, total CPU time=0.67 sec.
+ ------------------------------------------------------------------------------
+## Load and check patterns
+set_patterns -external dumpports_gate.evcd.fixed  -sensitive -strobe_period { 10 ns } -strobe_offset { 59 ns }
+ End reading 220681 patterns, CPU_time = 8.24 sec, Memory = 67MB
+run_simulation -sequential
+ Begin sequential simulation of 220681 external patterns.
+ 199481  data_be_o[3]  (exp=1, got=X)
+ 199481  data_be_o[2]  (exp=0, got=X)
+ 199481  data_be_o[1]  (exp=0, got=X)
+ 199481  data_be_o[0]  (exp=0, got=X)
+ 199481  data_addr_o[31]  (exp=0, got=X)
+ 199481  data_addr_o[30]  (exp=0, got=X)
+ 199481  data_addr_o[29]  (exp=0, got=X)
+ 199481  data_addr_o[28]  (exp=0, got=X)
+ 199481  data_addr_o[27]  (exp=0, got=X)
+ 199481  data_addr_o[26]  (exp=0, got=X)
+ 199481  data_addr_o[25]  (exp=0, got=X)
+ 199481  data_addr_o[24]  (exp=0, got=X)
+ 199481  data_addr_o[23]  (exp=0, got=X)
+ 199481  data_addr_o[22]  (exp=0, got=X)
+ 199481  data_addr_o[21]  (exp=0, got=X)
+ 199481  data_addr_o[20]  (exp=1, got=X)
+ 199481  data_addr_o[19]  (exp=1, got=X)
+ 199481  data_addr_o[18]  (exp=1, got=X)
+ 199481  data_addr_o[17]  (exp=1, got=X)
+ 199481  data_addr_o[16]  (exp=1, got=X)
+ 199481  data_addr_o[15]  (exp=1, got=X)
+ 199481  data_addr_o[14]  (exp=1, got=X)
+ 199481  data_addr_o[13]  (exp=1, got=X)
+ 199481  data_addr_o[12]  (exp=1, got=X)
+ 199481  data_addr_o[11]  (exp=1, got=X)
+ 199481  data_addr_o[10]  (exp=1, got=X)
+ 199481  data_addr_o[9]  (exp=1, got=X)
+ 199481  data_addr_o[8]  (exp=1, got=X)
+ 199481  data_addr_o[7]  (exp=1, got=X)
+ 199481  data_addr_o[6]  (exp=1, got=X)
+ 199481  data_addr_o[5]  (exp=1, got=X)
+ 199481  data_addr_o[4]  (exp=1, got=X)
+ 199481  data_addr_o[3]  (exp=1, got=X)
+ 199481  data_addr_o[2]  (exp=1, got=X)
+ 199481  data_addr_o[1]  (exp=1, got=X)
+ 199481  data_addr_o[0]  (exp=1, got=X)
+ 199484  data_wdata_o[31]  (exp=0, got=X)
+ 199484  data_wdata_o[30]  (exp=0, got=X)
+ 199484  data_wdata_o[29]  (exp=0, got=X)
+ 199484  data_wdata_o[28]  (exp=0, got=X)
+ 199484  data_wdata_o[27]  (exp=0, got=X)
+ 199484  data_wdata_o[26]  (exp=0, got=X)
+ 199484  data_wdata_o[25]  (exp=0, got=X)
+ 199484  data_wdata_o[24]  (exp=0, got=X)
+ 199484  data_wdata_o[23]  (exp=0, got=X)
+ 199484  data_wdata_o[22]  (exp=0, got=X)
+ 199484  data_wdata_o[21]  (exp=0, got=X)
+ 199484  data_wdata_o[20]  (exp=0, got=X)
+ 199484  data_wdata_o[19]  (exp=0, got=X)
+ 199484  data_wdata_o[18]  (exp=0, got=X)
+ 199484  data_wdata_o[17]  (exp=0, got=X)
+ 199484  data_wdata_o[16]  (exp=0, got=X)
+ 199484  data_wdata_o[15]  (exp=0, got=X)
+ 199484  data_wdata_o[14]  (exp=0, got=X)
+ 199484  data_wdata_o[13]  (exp=0, got=X)
+ 199484  data_wdata_o[12]  (exp=0, got=X)
+ 199484  data_wdata_o[11]  (exp=0, got=X)
+ 199484  data_wdata_o[10]  (exp=0, got=X)
+ 199484  data_wdata_o[9]  (exp=0, got=X)
+ 199484  data_wdata_o[8]  (exp=0, got=X)
+ 199484  data_wdata_o[7]  (exp=0, got=X)
+ 199484  data_wdata_o[6]  (exp=0, got=X)
+ 199484  data_wdata_o[5]  (exp=0, got=X)
+ 199484  data_wdata_o[4]  (exp=0, got=X)
+ 199484  data_wdata_o[3]  (exp=0, got=X)
+ 199484  data_wdata_o[2]  (exp=0, got=X)
+ 199484  data_wdata_o[1]  (exp=0, got=X)
+ 199484  data_wdata_o[0]  (exp=0, got=X)
+ 199489  data_wdata_o[31]  (exp=1, got=X)
+ 199489  data_wdata_o[30]  (exp=1, got=X)
+ 199489  data_wdata_o[29]  (exp=1, got=X)
+ 199489  data_wdata_o[28]  (exp=1, got=X)
+ 199489  data_wdata_o[27]  (exp=1, got=X)
+ 199489  data_wdata_o[26]  (exp=1, got=X)
+ 199489  data_wdata_o[25]  (exp=1, got=X)
+ 199489  data_wdata_o[24]  (exp=1, got=X)
+ 199489  data_wdata_o[23]  (exp=1, got=X)
+ 199489  data_wdata_o[22]  (exp=1, got=X)
+ 199489  data_wdata_o[21]  (exp=1, got=X)
+ 199489  data_wdata_o[20]  (exp=1, got=X)
+ 199489  data_wdata_o[19]  (exp=1, got=X)
+ 199489  data_wdata_o[18]  (exp=1, got=X)
+ 199489  data_wdata_o[17]  (exp=1, got=X)
+ 199489  data_wdata_o[16]  (exp=1, got=X)
+ 199489  data_wdata_o[15]  (exp=1, got=X)
+ 199489  data_wdata_o[14]  (exp=1, got=X)
+ 199489  data_wdata_o[13]  (exp=1, got=X)
+ 199489  data_wdata_o[12]  (exp=1, got=X)
+ 199489  data_wdata_o[11]  (exp=1, got=X)
+ 199489  data_wdata_o[10]  (exp=1, got=X)
+ 199489  data_wdata_o[9]  (exp=1, got=X)
+ 199489  data_wdata_o[8]  (exp=1, got=X)
+ 199489  data_wdata_o[7]  (exp=1, got=X)
+ 199489  data_wdata_o[6]  (exp=1, got=X)
+ 199489  data_wdata_o[5]  (exp=1, got=X)
+ 199489  data_wdata_o[4]  (exp=1, got=X)
+ 199489  data_wdata_o[3]  (exp=1, got=X)
+ 199489  data_wdata_o[2]  (exp=1, got=X)
+ 199489  data_wdata_o[1]  (exp=1, got=X)
+ 199489  data_wdata_o[0]  (exp=1, got=X)
+ 199494  data_wdata_o[31]  (exp=1, got=X)
+ 199494  data_wdata_o[30]  (exp=1, got=X)
+ 199494  data_wdata_o[29]  (exp=1, got=X)
+ 199494  data_wdata_o[28]  (exp=1, got=X)
+ 199494  data_wdata_o[27]  (exp=1, got=X)
+ 199494  data_wdata_o[26]  (exp=1, got=X)
+ 199494  data_wdata_o[25]  (exp=1, got=X)
+ 199494  data_wdata_o[24]  (exp=1, got=X)
+ 199494  data_wdata_o[23]  (exp=1, got=X)
+ 199494  data_wdata_o[22]  (exp=1, got=X)
+ 199494  data_wdata_o[21]  (exp=1, got=X)
+ 199494  data_wdata_o[20]  (exp=1, got=X)
+ 199494  data_wdata_o[19]  (exp=1, got=X)
+ 199494  data_wdata_o[18]  (exp=1, got=X)
+ 199494  data_wdata_o[17]  (exp=1, got=X)
+ 199494  data_wdata_o[16]  (exp=1, got=X)
+ 199494  data_wdata_o[15]  (exp=1, got=X)
+ 199494  data_wdata_o[14]  (exp=1, got=X)
+ 199494  data_wdata_o[13]  (exp=1, got=X)
+ 199494  data_wdata_o[12]  (exp=1, got=X)
+ 199494  data_wdata_o[11]  (exp=1, got=X)
+ 199494  data_wdata_o[10]  (exp=1, got=X)
+ 199494  data_wdata_o[9]  (exp=1, got=X)
+ 199494  data_wdata_o[8]  (exp=1, got=X)
+ 199494  data_wdata_o[7]  (exp=1, got=X)
+ 199494  data_wdata_o[6]  (exp=1, got=X)
+ 199494  data_wdata_o[5]  (exp=1, got=X)
+ 199494  data_wdata_o[4]  (exp=1, got=X)
+ 199494  data_wdata_o[3]  (exp=1, got=X)
+ 199494  data_wdata_o[2]  (exp=1, got=X)
+ 199494  data_wdata_o[1]  (exp=1, got=X)
+ 199494  data_wdata_o[0]  (exp=1, got=X)
+ 199497  data_wdata_o[31]  (exp=1, got=X)
+ 199497  data_wdata_o[30]  (exp=1, got=X)
+ 199497  data_wdata_o[29]  (exp=1, got=X)
+ 199497  data_wdata_o[28]  (exp=1, got=X)
+ 199497  data_wdata_o[27]  (exp=1, got=X)
+ 199497  data_wdata_o[26]  (exp=1, got=X)
+ 199497  data_wdata_o[25]  (exp=1, got=X)
+ 199497  data_wdata_o[24]  (exp=1, got=X)
+ 199497  data_wdata_o[23]  (exp=1, got=X)
+ 199497  data_wdata_o[22]  (exp=1, got=X)
+ 199497  data_wdata_o[21]  (exp=1, got=X)
+ 199497  data_wdata_o[20]  (exp=1, got=X)
+ 199497  data_wdata_o[19]  (exp=1, got=X)
+ 199497  data_wdata_o[18]  (exp=1, got=X)
+ 199497  data_wdata_o[17]  (exp=1, got=X)
+ 199497  data_wdata_o[16]  (exp=1, got=X)
+ 199497  data_wdata_o[15]  (exp=1, got=X)
+ 199497  data_wdata_o[14]  (exp=1, got=X)
+ 199497  data_wdata_o[13]  (exp=1, got=X)
+ 199497  data_wdata_o[12]  (exp=1, got=X)
+ 199497  data_wdata_o[11]  (exp=1, got=X)
+ 199497  data_wdata_o[10]  (exp=1, got=X)
+ 199497  data_wdata_o[9]  (exp=1, got=X)
+ 199497  data_wdata_o[8]  (exp=1, got=X)
+ 199497  data_wdata_o[7]  (exp=1, got=X)
+ 199497  data_wdata_o[6]  (exp=1, got=X)
+ 199497  data_wdata_o[5]  (exp=1, got=X)
+ 199497  data_wdata_o[4]  (exp=1, got=X)
+ 199497  data_wdata_o[3]  (exp=1, got=X)
+ 199497  data_wdata_o[2]  (exp=1, got=X)
+ 199497  data_wdata_o[1]  (exp=1, got=X)
+ 199497  data_wdata_o[0]  (exp=1, got=X)
+ 199530  data_be_o[3]  (exp=1, got=X)
+ 199530  data_be_o[2]  (exp=0, got=X)
+ 199530  data_be_o[1]  (exp=0, got=X)
+ 199530  data_be_o[0]  (exp=0, got=X)
+ 199530  data_addr_o[31]  (exp=0, got=X)
+ 199530  data_addr_o[30]  (exp=0, got=X)
+ 199530  data_addr_o[29]  (exp=0, got=X)
+ 199530  data_addr_o[28]  (exp=0, got=X)
+ 199530  data_addr_o[27]  (exp=0, got=X)
+ 199530  data_addr_o[26]  (exp=0, got=X)
+ 199530  data_addr_o[25]  (exp=0, got=X)
+ 199530  data_addr_o[24]  (exp=0, got=X)
+ 199530  data_addr_o[23]  (exp=0, got=X)
+ 199530  data_addr_o[22]  (exp=0, got=X)
+ 199530  data_addr_o[21]  (exp=0, got=X)
+ 199530  data_addr_o[20]  (exp=1, got=X)
+ 199530  data_addr_o[19]  (exp=1, got=X)
+ 199530  data_addr_o[18]  (exp=1, got=X)
+ 199530  data_addr_o[17]  (exp=1, got=X)
+ 199530  data_addr_o[16]  (exp=1, got=X)
+ 199530  data_addr_o[15]  (exp=1, got=X)
+ 199530  data_addr_o[14]  (exp=1, got=X)
+ 199530  data_addr_o[13]  (exp=1, got=X)
+ 199530  data_addr_o[12]  (exp=1, got=X)
+ 199530  data_addr_o[11]  (exp=1, got=X)
+ 199530  data_addr_o[10]  (exp=1, got=X)
+ 199530  data_addr_o[9]  (exp=1, got=X)
+ 199530  data_addr_o[8]  (exp=1, got=X)
+ 199530  data_addr_o[7]  (exp=1, got=X)
+ 199530  data_addr_o[6]  (exp=1, got=X)
+ 199530  data_addr_o[5]  (exp=1, got=X)
+ 199530  data_addr_o[4]  (exp=1, got=X)
+ 199530  data_addr_o[3]  (exp=1, got=X)
+ 199530  data_addr_o[2]  (exp=1, got=X)
+ 199530  data_addr_o[1]  (exp=1, got=X)
+ 199530  data_addr_o[0]  (exp=1, got=X)
+ 199532  data_be_o[3]  (exp=1, got=X)
+ 199532  data_be_o[2]  (exp=0, got=X)
+ 199532  data_be_o[1]  (exp=0, got=X)
+ 199532  data_be_o[0]  (exp=0, got=X)
+ 199532  data_addr_o[31]  (exp=0, got=X)
+ 199532  data_addr_o[30]  (exp=0, got=X)
+ 199532  data_addr_o[29]  (exp=0, got=X)
+ 199532  data_addr_o[28]  (exp=0, got=X)
+ 199532  data_addr_o[27]  (exp=0, got=X)
+ 199532  data_addr_o[26]  (exp=0, got=X)
+ 199532  data_addr_o[25]  (exp=0, got=X)
+ 199532  data_addr_o[24]  (exp=0, got=X)
+ 199532  data_addr_o[23]  (exp=0, got=X)
+ 199532  data_addr_o[22]  (exp=0, got=X)
+ 199532  data_addr_o[21]  (exp=0, got=X)
+ 199532  data_addr_o[20]  (exp=1, got=X)
+ 199532  data_addr_o[19]  (exp=1, got=X)
+ 199532  data_addr_o[18]  (exp=1, got=X)
+ 199532  data_addr_o[17]  (exp=1, got=X)
+ 199532  data_addr_o[16]  (exp=1, got=X)
+ 199532  data_addr_o[15]  (exp=1, got=X)
+ 199532  data_addr_o[14]  (exp=1, got=X)
+ 199532  data_addr_o[13]  (exp=1, got=X)
+ 199532  data_addr_o[12]  (exp=1, got=X)
+ 199532  data_addr_o[11]  (exp=1, got=X)
+ 199532  data_addr_o[10]  (exp=1, got=X)
+ 199532  data_addr_o[9]  (exp=1, got=X)
+ 199532  data_addr_o[8]  (exp=1, got=X)
+ 199532  data_addr_o[7]  (exp=1, got=X)
+ 199532  data_addr_o[6]  (exp=1, got=X)
+ 199532  data_addr_o[5]  (exp=1, got=X)
+ 199532  data_addr_o[4]  (exp=1, got=X)
+ 199532  data_addr_o[3]  (exp=1, got=X)
+ 199532  data_addr_o[2]  (exp=1, got=X)
+ 199532  data_addr_o[1]  (exp=1, got=X)
+ 199532  data_addr_o[0]  (exp=1, got=X)
+ 199549  data_wdata_o[7]  (exp=0, got=X)
+ 199549  data_wdata_o[6]  (exp=0, got=X)
+ 199549  data_wdata_o[5]  (exp=0, got=X)
+ 199549  data_wdata_o[4]  (exp=0, got=X)
+ 199549  data_wdata_o[3]  (exp=0, got=X)
+ 199549  data_wdata_o[2]  (exp=0, got=X)
+ 199549  data_wdata_o[1]  (exp=0, got=X)
+ 199549  data_wdata_o[0]  (exp=0, got=X)
+ 220647  data_wdata_o[31]  (exp=0, got=X)
+ 220647  data_wdata_o[30]  (exp=0, got=X)
+ 220647  data_wdata_o[29]  (exp=0, got=X)
+ 220647  data_wdata_o[28]  (exp=0, got=X)
+ 220647  data_wdata_o[27]  (exp=0, got=X)
+ 220647  data_wdata_o[26]  (exp=0, got=X)
+ 220647  data_wdata_o[25]  (exp=0, got=X)
+ 220647  data_wdata_o[24]  (exp=0, got=X)
+ 220647  data_wdata_o[23]  (exp=0, got=X)
+ 220647  data_wdata_o[22]  (exp=0, got=X)
+ 220647  data_wdata_o[21]  (exp=0, got=X)
+ 220647  data_wdata_o[20]  (exp=0, got=X)
+ 220647  data_wdata_o[19]  (exp=0, got=X)
+ 220647  data_wdata_o[18]  (exp=0, got=X)
+ 220647  data_wdata_o[17]  (exp=1, got=X)
+ 220647  data_wdata_o[16]  (exp=0, got=X)
+ 220647  data_wdata_o[15]  (exp=0, got=X)
+ 220647  data_wdata_o[14]  (exp=0, got=X)
+ 220647  data_wdata_o[13]  (exp=0, got=X)
+ 220647  data_wdata_o[12]  (exp=0, got=X)
+ 220647  data_wdata_o[11]  (exp=0, got=X)
+ 220647  data_wdata_o[10]  (exp=0, got=X)
+ 220647  data_wdata_o[9]  (exp=0, got=X)
+ 220647  data_wdata_o[8]  (exp=0, got=X)
+ 220647  data_wdata_o[7]  (exp=0, got=X)
+ 220647  data_wdata_o[6]  (exp=0, got=X)
+ 220647  data_wdata_o[5]  (exp=0, got=X)
+ 220647  data_wdata_o[4]  (exp=0, got=X)
+ 220647  data_wdata_o[3]  (exp=0, got=X)
+ 220647  data_wdata_o[2]  (exp=0, got=X)
+ 220647  data_wdata_o[1]  (exp=0, got=X)
+ 220647  data_wdata_o[0]  (exp=0, got=X)
+ Simulation completed: #patterns=220681/441371, #fail_pats=9(9), #failing_meas=276(276), #rejected_pats=0, CPU time=250.80
+## Fault list (select one of the following)
+add_faults -all
+ 269436 faults were added to fault list, CPU_time=1.08 sec.
+#add_faults ex_stage_i/alu_i
+#add_faults ex_stage_i/alu_i/int_div_div_i
+#add_faults ex_stage_i/mult_i
+#add_faults if_stage_i/prefetch_128_prefetch_buffer_i
+#add_faults if_stage_i/hwloop_controller_i
+#add_faults if_stage_i/compressed_decoder_i
+#add_faults if_stage_i/
+#add_faults id_stage_i/registers_i
+#add_faults id_stage_i/decoder_i
+#add_faults id_stage_i/controller_i
+#add_faults id_stage_i/int_controller_i
+#add_faults id_stage_i/hwloop_regs_i
+#add_faults id_stage_i/
+add_faults id_stage_i/registers_i
+ 0 faults were added to fault list.
+#read_faults previous_fsim_faults.txt -force_retain_code -add
+## Fault simulation
+run_fault_sim -sequential
+ ------------------------------------------------------------------------------
+ Begin sequential fault simulation of 269085 faults on 220681 external patterns.
+ -----------------------------------------------------------
+ #faults    pass #faults   cum. #faults     test    process
+ simulated  detect/total   detect/active  coverage  CPU time
+ ---------  -------------  -------------  --------  --------
+ 1688         1368   1688    1368 267717     0.52%   2076.41
+ 3160         1058   1472    2426 266659     0.92%   7538.32
+ 4630         1155   1470    3581 265504     1.39%  11457.58
+ 8730           76   4100    3657 265428     1.42%  14068.94
+ 10641          61   1911    3718 265367     1.44%  15945.51
+ 12338          59   1697    3777 265308     1.47%  17777.73
+ 14099          55   1761    3832 265253     1.49%  19601.18
+ 16198          52   2099    3884 265201     1.51%  21464.43
+ 18355          54   2157    3938 265147     1.53%  23297.30
+ 20622          52   2267    3990 265095     1.55%  25106.28
+ 22906          49   2284    4039 265046     1.56%  26911.96
+ 25217          49   2311    4088 264997     1.58%  28723.16
+ 27645          52   2428    4140 264945     1.60%  30534.32
+ 29773         467   2128    4607 264478     1.77%  33152.21
+ 31464         624   1691    5231 263854     2.01%  36300.96
+ 33330         681   1866    5912 263173     2.26%  39601.20
+ 35202         317   1872    6229 262856     2.38%  41653.93
+ 36915         922   1713    7151 261934     2.72%  44926.82
+ 38660         858   1745    8009 261076     3.04%  48465.70
+ 40439         982   1779    8991 260094     3.41%  51554.05
+ 42201         623   1762    9614 259471     3.64%  54096.25
+ 43970        1150   1769   10764 258321     4.07%  56678.48
+ 45671         920   1701   11684 257401     4.41%  59417.48
+ 47407        1111   1736   12795 256290     4.82%  62044.27
+ 49143         673   1736   13468 255617     5.07%  64740.38
+ 50819        1132   1676   14600 254485     5.50%  66345.97
+ 52522         985   1703   15585 253500     5.86%  68991.13
+ 54293        1211   1771   16796 252289     6.31%  70658.29
+ 55939         838   1646   17634 251451     6.63%  73604.59
+ 57609        1162   1670   18796 250289     7.06%  75154.40
+ 59344        1042   1735   19838 249247     7.45%  78506.02
+ 61134        1549   1790   21387 247698     8.04%  81528.43
+ 62872        1339   1738   22726 246359     8.54%  84041.47
+ 64682        1142   1810   23868 245217     8.98%  89064.00
+ 66714         739   2032   24607 244478     9.25%  91845.83
+ 68560         898   1846   25505 243580     9.59%  94970.61
+ 69892        1093   1332   26598 242487    10.00%  97996.93
+ 71858        1419   1966   28017 241068    10.54% 100218.17
+ 73710        1420   1852   29437 239648    11.08% 103199.43
+ 75592        1433   1882   30870 238215    11.61% 105554.47
+ 77429        1216   1837   32086 236999    12.07% 107841.22
+ 79253        1559   1824   33645 235440    12.66% 110058.67
+ 81130        1812   1877   35457 233628    13.33% 111143.52
+ 82980        1731   1850   37188 231897    13.98% 113550.42
+ 84808        1762   1828   38950 230135    14.64% 114795.69
+ 86686        1718   1878   40668 228417    15.28% 116412.73
+ 88602        1732   1916   42400 226685    15.94% 119383.61
+ 90453        1749   1851   44149 224936    16.60% 121897.68
+ 92210        1096   1757   45245 223840    17.01% 123790.29
+ 94042        1772   1832   47017 222068    17.67% 125952.33
+ 95561         611   1519   47628 221457    17.91% 129292.24
+ 97506          97   1945   47725 221360    17.94% 131934.97
+ 99363         507   1857   48232 220853    18.13% 135499.12
+ 101239       1638   1876   49870 219215    18.75% 136948.12
+ 102880        697   1641   50567 218518    19.01% 140270.94
+ 104842       1700   1962   52267 216818    19.64% 140995.55
+ 106552       1149   1710   53416 215669    20.07% 144104.48
+ 108388       1611   1836   55027 214058    20.67% 145278.70
+ 110183       1650   1795   56677 212408    21.29% 146131.44
+ 111915       1436   1732   58113 210972    21.82% 147289.38
+ 113777       1655   1862   59768 209317    22.44% 148308.80
+ 115571       1601   1794   61369 207716    23.04% 149294.69
+ 117447       1589   1876   62958 206127    23.63% 149978.78
+ 119136       1366   1689   64324 204761    24.14% 151425.83
+ 121086       1418   1950   65742 203343    24.66% 153014.33
+ 123377        937   2291   66679 202406    25.01% 156347.55
+ 125089        376   1712   67055 202030    25.15% 158627.66
+ 126873       1090   1784   68145 200940    25.56% 160191.41
+ 129399          5   2526   68150 200935    25.56% 162673.55
+ 130812       1300   1413   69450 199635    26.05% 163462.59
+ 133215         46   2403   69496 199589    26.06% 165236.03
+ 135764          2   2549   69498 199587    26.06% 167002.88
+ 138331          2   2567   69500 199585    26.06% 168767.30
+ 140630        407   2299   69907 199178    26.22% 170792.95
+ 143089          6   2459   69913 199172    26.22% 173439.06
+ 144832       1676   1743   71589 197496    26.84% 173885.06
+ 146490       1450   1658   73039 196046    27.38% 175070.80
+ 148123       1310   1633   74349 194736    27.87% 176717.09
+ 150542         37   2419   74386 194699    27.88% 178532.06
+ 152692        561   2150   74947 194138    28.09% 181215.77
+ 154483       1406   1791   76353 192732    28.62% 182936.78
+ 156315        333   1832   76686 192399    28.74% 185767.62
+ 157926       1482   1611   78168 190917    29.29% 186660.73
+ 159757       1415   1831   79583 189502    29.82% 188204.69
+ 161577       1510   1820   81093 187992    30.38% 189388.34
+ 162999       1307   1422   82400 186685    30.87% 190333.20
+ 164604       1138   1605   83538 185547    31.29% 191342.94
+ 166510       1703   1906   85241 183844    31.92% 191899.56
+ 168205       1614   1695   86855 182230    32.52% 192245.12
+ 169902       1548   1697   88403 180682    33.11% 193226.17
+ 171655        779   1753   89182 179903    33.40% 195634.72
+ 173327       1371   1672   90553 178532    33.91% 196603.88
+ 174866       1403   1539   91956 177129    34.43% 197435.59
+ 176448       1432   1582   93388 175697    34.97% 198397.84
+ 178059       1238   1611   94626 174459    35.43% 199782.59
+ 179743       1526   1684   96152 172933    36.00% 200414.70
+ 181301        669   1558   96821 172264    36.24% 203596.55
+ 182661       1275   1360   98096 170989    36.73% 205376.92
+ 184069       1321   1408   99417 169668    37.24% 207279.44
+ 185880       1039   1811  100456 168629    37.62% 208424.84
+ 187478          7   1598  100463 168622    37.63% 210750.80
+ 188941       1376   1463  101839 167246    38.14% 211231.11
+ 190617       1514   1676  103353 165732    38.70% 211888.81
+ 192225          7   1608  103360 165725    38.70% 213781.70
+ 193886        865   1661  104225 164860    39.02% 215582.61
+ 195277       1267   1391  105492 163593    39.51% 217050.88
+ 196894        146   1617  105638 163447    39.57% 219771.62
+ 198556       1514   1662  107152 161933    40.13% 220248.45
+ 199927       1286   1371  108438 160647    40.62% 221216.34
+ 201300       1142   1373  109580 159505    41.06% 224305.23
+ 202667       1199   1367  110779 158306    41.52% 226486.69
+ 204302       1538   1635  112317 156768    42.10% 227374.62
+ 205779        573   1477  112890 156195    42.31% 230356.73
+ 207388        704   1609  113594 155491    42.57% 233206.69
+ 208758       1263   1370  114857 154228    43.06% 234281.45
+ 210373        381   1615  115238 153847    43.21% 236866.41
+ 211945          7   1572  115245 153840    43.21% 239178.67
+ 213601       1170   1656  116415 152670    43.64% 240395.41
+ 215284       1509   1683  117924 151161    44.20% 240971.16
+ 216883         26   1599  117950 151135    44.21% 242779.41
+ 218563        810   1680  118760 150325    44.52% 245205.81
+ 220018       1260   1455  120020 149065    45.00% 247010.84
+ 221518       1393   1500  121413 147672    45.53% 248024.52
+ 223401       1667   1883  123080 146005    46.15% 248667.16
+ 224898       1412   1497  124492 144593    46.68% 249756.80
+ 226665        977   1767  125469 143616    47.05% 250799.39
+ 228164       1380   1499  126849 142236    47.57% 252461.78
+ 230014        290   1850  127139 141946    47.68% 254933.53
+ 231701        546   1687  127685 141400    47.88% 257807.12
+ 233091       1307   1390  128992 140093    48.38% 258933.91
+ 235042        557   1951  129549 139536    48.59% 261681.45
+ 236603        220   1561  129769 139316    48.67% 264581.16
+ 238195        349   1592  130118 138967    48.80% 267553.19
+ 239855       1347   1660  131465 137620    49.30% 268632.56
+ 241448        786   1593  132251 136834    49.59% 271139.00
+ 243368          7   1920  132258 136827    49.60% 273544.34
+ 245047       1093   1679  133351 135734    50.00% 275145.22
+ 246836        455   1789  133806 135279    50.17% 277799.62
+ 248797        517   1961  134323 134762    50.36% 280258.41
+ 250560       1203   1763  135526 133559    50.81% 281340.81
+ 252250        438   1690  135964 133121    50.97% 284029.47
+ 254098        519   1848  136483 132602    51.17% 286227.44
+ 256147         22   2049  136505 132580    51.17% 288654.62
+ 258369         36   2222  136541 132544    51.19% 290451.31
+ 260114          7   1745  136548 132537    51.19% 292712.75
+ 261742        115   1628  136663 132422    51.23% 295202.19
+ 263655         95   1913  136758 132327    51.27% 297751.53
+ 265464          7   1809  136765 132320    51.27% 300430.09
+ 267277        117   1813  136882 132203    51.32% 303117.66
+ 268918        976   1641  137858 131227    51.68% 305823.31
+ 268944         21     26  137879 131206    51.69% 306276.00
+ 992 faults were identified as detected by implication, test coverage is now 51.87%.
+ Fault simulation completed: #faults_simulated=269085, test_coverage=51.87%, CPU time=306276.00
+## Reports
+set_faults -fault_coverage
+ Warning: Unused gate deletion affects fault coverage calculation. (M245)
+report_faults -level {5 100} > report_faults_hierarchy.txt
+report_faults -level {100 1} -verbose > report_faults_verbose.txt
+report_summaries > report_summaries.txt
+write_faults fsim_faults.txt -replace -all
+ Write faults completed: 269436 faults were written into file "fsim_faults.txt".
+ Error: unknown command '0c1' (CMD-005)
+
