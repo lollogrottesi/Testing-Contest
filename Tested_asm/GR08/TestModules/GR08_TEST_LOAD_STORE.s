@@ -137,11 +137,9 @@ endld2:
 	sh s7, 0(s11)
 	p.sw s2, 0(s7!)
 	sw s7, 0(s11)
-	p.sw x0, 0x3F(s7!)
 	sw s7, 0(s11)
 	p.sb x0, 0(s8!)
 	sw s8, 0(s11)
-	p.sh x0, 0x3F(s8!)
 	sw s8, 0(s11)
 	//p.sb s2, 1(s7!)
 	//p.sh s2, 0(s7!)
@@ -149,10 +147,3 @@ endld2:
 	p.sb s2, s3(s11!)
 	p.sh s2, s3(s11!)
 	p.sw s2, s3(s11!)
-	li s3, 1
-	li s2, 0x002001FF
-	p.sb x0, x0(s11)
-	p.sh x0, s4(s11)
-	p.sb s2, x0(s11)
-	p.sh s2, s4(s11)
-	p.sw s2, s3(s2)
