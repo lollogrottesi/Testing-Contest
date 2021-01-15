@@ -1,5 +1,5 @@
-#include "TestModules/GR08_TEST_COMPRESSED.h"
-TEST_COMPRESSED()
+//#include "TestModules/GR08_TEST_COMPRESSED.h"
+//TEST_COMPRESSED()
 #include "TestModules/GR08_TEST_REG_FILE.h"
 MARCH_TEST()
 #include "TestModules/GR08_ALU_DEEP.s"

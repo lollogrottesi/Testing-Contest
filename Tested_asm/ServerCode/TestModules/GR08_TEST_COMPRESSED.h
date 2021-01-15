@@ -48,48 +48,9 @@
   c.sw x12, 0(x11);\
   c.bnez x12, neveer2;\
  .option norvc;\
-  /*TEST_J(c.j, 1);\
-  TEST_J(c.jal, 0);\
-  TEST_JR(c.jr, 1);\
-  TEST_JR(c.jalr, 0);\*/
 addi x1, x1, 1;\
 helper_error:;\
 sw x1, 0x(x11);\
 li x11, 0x00200000;\
 lw sp, 0(x11);\
 
-#define TEST_J(rvc_instr, should_be_zero) \
-  .data; \
-rvc_string ##rvc_instr: \
-  .string #rvc_instr; \
-  .text; \
-  lui a0,      %hi(rvc_string##rvc_instr); \
-  addi a0, a0, %lo(rvc_string##rvc_instr); \
-  \
-  li ra, 0; \
-  li a1, should_be_zero; \
-  .option rvc; \
-  rvc_instr rvc_instr##_jt; \
-  .option norvc; \
-  jal helper_error; \
-rvc_instr##_jt:; \
-  mv a2, ra; \
-
-#define TEST_JR(rvc_instr, should_be_zero) \
-  .data; \
-rvc_string ##rvc_instr: \
-  .string #rvc_instr; \
-  .text; \
-  lui a0,      %hi(rvc_string##rvc_instr); \
-  addi a0, a0, %lo(rvc_string##rvc_instr); \
-  \
-  li ra, 0; \
-  li a1, should_be_zero; \
-  lui  a2,     %hi(rvc_instr##_jt); \
-  addi a2, a2, %lo(rvc_instr##_jt); \
-  .option rvc; \
-  rvc_instr a2; \
-  .option norvc; \
-  jal helper_error; \
-rvc_instr##_jt:; \
-  mv a2, ra; \
