@@ -53,6 +53,7 @@ _start:
 
 PUSH_ALL()
 #include "TestModules/GR20_INTEGRATION.S"
+#include "TestModules/GR20_ALU.S"
 POP_ALL()
 
 PUSH_ALL()
