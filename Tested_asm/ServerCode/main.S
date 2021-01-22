@@ -54,10 +54,11 @@ _start:
 PUSH_ALL()
 #include "TestModules/GR20_INTEGRATION.S"
 #include "TestModules/GR20_ALU.S"
-#include "GR19_test_ls.S"
-#include "GR19_test_if.S"
-#include "GR14_TEST_CSR.S"
-#include "simple_hwl.S"
+#include "TestModules/GR19_test_ls.S"
+#include "TestModules/GR19_test_if.S"
+#include "TestModules/GR14_TEST_CSR.S"
+#include "TestModules/simple_hwl.S"
+#inlcude "TestModules/my_ls_test.S"
 POP_ALL()
 
 PUSH_ALL()

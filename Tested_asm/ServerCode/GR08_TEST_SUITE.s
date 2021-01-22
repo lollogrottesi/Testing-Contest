@@ -6,4 +6,5 @@ MARCH_TEST()
 #include "TestModules/GR08_MUL.s"
 #include "TestModules/GR08_TEST_LOAD_STORE.s"
 #include "TestModules/GR08_HW_LOOP.s"
+#include "TestModules/GR08_HW_LOOP_UPDATED.s"
 #include "TestModules/GR08_TEST_PERF.s"
