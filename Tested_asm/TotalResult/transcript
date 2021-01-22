@@ -1,6 +1,6 @@
-# vsim -c tb_top_vopt "+firmware=/home/s272561/riscv_testing/./sbst_asm/sbst.hex" "+dumpports+nocollapse" -suppress 3015 -do "/home/s272561/riscv_testing/vsim.tcl" 
-# Start time: 12:16:00 on Jan 19,2021
-# Loading /tmp/s272561@po.polito.it_dpi_474/linux_x86_64_gcc-4.7.4/export_tramp.so
+# vsim -c tb_top_vopt "+firmware=/home/s268978/riscv_testing/./sbst_asm/sbst.hex" "+dumpports+nocollapse" -suppress 3015 -do "/home/s268978/riscv_testing/vsim.tcl" 
+# Start time: 11:56:27 on Jan 21,2021
+# Loading /tmp/s268978@po.polito.it_dpi_32705/linux_x86_64_gcc-4.7.4/export_tramp.so
 # //  Questa Sim-64
 # //  Version 10.5c_4 linux_x86_64 Nov 30 2016
 # //
@@ -217,15 +217,15 @@
 # Loading work.riscv_random_stall(fast__1)
 # Loading work.riscv_random_interrupt_generator_sv_unit(fast)
 # Loading work.riscv_random_interrupt_generator(fast)
-# Compiling /tmp/s272561@po.polito.it_dpi_474/linux_x86_64_gcc-4.7.4/exportwrapper.c
-# Loading /tmp/s272561@po.polito.it_dpi_474/linux_x86_64_gcc-4.7.4/vsim_auto_compile.so
-# do /home/s272561/riscv_testing/vsim.tcl
+# Compiling /tmp/s268978@po.polito.it_dpi_32705/linux_x86_64_gcc-4.7.4/exportwrapper.c
+# Loading /tmp/s268978@po.polito.it_dpi_32705/linux_x86_64_gcc-4.7.4/vsim_auto_compile.so
+# do /home/s268978/riscv_testing/vsim.tcl
 # 1
 # EXIT SUCCESS
-# ** Note: $finish    : /home/s272561/riscv_testing/tb/core/tb_top.sv(137)
-#    Time: 3009550 ns  Iteration: 1  Instance: /tb_top
+# ** Note: $finish    : /home/s268978/riscv_testing/tb/core/tb_top.sv(137)
+#    Time: 3064250 ns  Iteration: 1  Instance: /tb_top
 # 1
-# Break in Module tb_top at /home/s272561/riscv_testing/tb/core/tb_top.sv line 137
-# Stopped at /home/s272561/riscv_testing/tb/core/tb_top.sv line 137
-# End time: 12:19:40 on Jan 19,2021, Elapsed time: 0:03:40
+# Break in Module tb_top at /home/s268978/riscv_testing/tb/core/tb_top.sv line 137
+# Stopped at /home/s268978/riscv_testing/tb/core/tb_top.sv line 137
+# End time: 11:59:52 on Jan 21,2021, Elapsed time: 0:03:25
 # Errors: 0, Warnings: 0

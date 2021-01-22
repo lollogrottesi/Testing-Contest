@@ -2,19 +2,19 @@
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT     142602
- Possibly detected                PT       1309
+ Detected                         DT     144566
+ Possibly detected                PT       1232
  Undetectable                     UD        344
  ATPG untestable                  AU          0
- Not detected                     ND      17891
+ Not detected                     ND      16004
  -----------------------------------------------
  total faults                            162146
- test coverage                            88.54%
- fault coverage                           88.35%
+ test coverage                            89.73%
+ fault coverage                           89.54%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
  #internal patterns                           0
- #external patterns (dumpports_gate.evcd.fixed) 300951
-     #full_sequential patterns           300951
+ #external patterns (dumpports_gate.evcd.fixed) 306421
+     #full_sequential patterns           306421
  -----------------------------------------------

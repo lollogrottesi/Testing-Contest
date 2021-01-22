@@ -18,7 +18,7 @@ run_build_model riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800
  Warning: Rule B9 (undriven module internal net) was violated 31 times.
  Warning: Rule B10 (unconnected module internal net) was violated 459 times.
  Warning: Rule N20 (underspecified UDP) was violated 7 times.
- End build model: #primitives=65718, CPU_time=0.45 sec, Memory=30MB
+ End build model: #primitives=65718, CPU_time=0.43 sec, Memory=30MB
  ------------------------------------------------------------------------------
  Begin learning analyses...
  End learning analyses, total learning CPU time=0.56 sec.
@@ -140,7 +140,7 @@ run_drc
  Begin clock rules checking...
  Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 2130 times.
  Warning: Rule C25 (unstable cell clock input connected from multiple sources) was violated 3225 times.
- Clock rules checking completed, CPU time=0.28 sec.
+ Clock rules checking completed, CPU time=0.25 sec.
  ------------------------------------------------------------------------------
  Begin nonscan rules checking...
  Nonscan cell summary: #DFF=2130  #DLAT=1097  #RAM_outs=0  tla_usage_type=no_clock_tla
@@ -148,455 +148,397 @@ run_drc
  Nonscan rules checking completed, CPU time=0.00 sec.
  ------------------------------------------------------------------------------
  Begin DRC dependent learning...
- Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.01 sec
- DRC dependent learning completed, CPU time=0.17 sec.
+ Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.02 sec
+ DRC dependent learning completed, CPU time=0.19 sec.
  ------------------------------------------------------------------------------
  DRC Summary Report
  ------------------------------------------------------------------------------
  Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 2130 times.
  Warning: Rule C25 (unstable cell clock input connected from multiple sources) was violated 3225 times.
  There were 5355 violations that occurred during DRC process.
- Design rules checking was successful, total CPU time=0.47 sec.
+ Design rules checking was successful, total CPU time=0.46 sec.
  ------------------------------------------------------------------------------
 ## Load and check patterns
 set_patterns -external dumpports_gate.evcd.fixed  -sensitive -strobe_period { 10 ns } -strobe_offset { 59 ns }
- End reading 300951 patterns, CPU_time = 5.18 sec, Memory = 92MB
+ End reading 306421 patterns, CPU_time = 5.22 sec, Memory = 94MB
 run_simulation -sequential
- Begin sequential simulation of 300951 external patterns.
- 42246  data_wdata_o[31]  (exp=0, got=X)
- 42246  data_wdata_o[30]  (exp=0, got=X)
- 42246  data_wdata_o[29]  (exp=0, got=X)
- 42246  data_wdata_o[28]  (exp=0, got=X)
- 42246  data_wdata_o[27]  (exp=1, got=X)
- 42246  data_wdata_o[26]  (exp=1, got=X)
- 42246  data_wdata_o[25]  (exp=1, got=X)
- 42246  data_wdata_o[24]  (exp=1, got=X)
- 42246  data_wdata_o[23]  (exp=0, got=X)
- 42246  data_wdata_o[22]  (exp=0, got=X)
- 42246  data_wdata_o[21]  (exp=0, got=X)
- 42246  data_wdata_o[20]  (exp=0, got=X)
- 42246  data_wdata_o[19]  (exp=1, got=X)
- 42246  data_wdata_o[18]  (exp=1, got=X)
- 42246  data_wdata_o[17]  (exp=1, got=X)
- 42246  data_wdata_o[16]  (exp=1, got=X)
- 42246  data_wdata_o[15]  (exp=0, got=X)
- 42246  data_wdata_o[14]  (exp=0, got=X)
- 42246  data_wdata_o[13]  (exp=0, got=X)
- 42246  data_wdata_o[12]  (exp=0, got=X)
- 42246  data_wdata_o[11]  (exp=1, got=X)
- 42246  data_wdata_o[10]  (exp=1, got=X)
- 42246  data_wdata_o[9]  (exp=1, got=X)
- 42246  data_wdata_o[8]  (exp=1, got=X)
- 42246  data_wdata_o[7]  (exp=0, got=X)
- 42246  data_wdata_o[6]  (exp=0, got=X)
- 42246  data_wdata_o[5]  (exp=0, got=X)
- 42246  data_wdata_o[4]  (exp=0, got=X)
- 42246  data_wdata_o[3]  (exp=1, got=X)
- 42246  data_wdata_o[2]  (exp=1, got=X)
- 42246  data_wdata_o[1]  (exp=1, got=X)
- 42246  data_wdata_o[0]  (exp=1, got=X)
- 42248  data_wdata_o[31]  (exp=0, got=X)
- 42248  data_wdata_o[30]  (exp=0, got=X)
- 42248  data_wdata_o[29]  (exp=0, got=X)
- 42248  data_wdata_o[28]  (exp=0, got=X)
- 42248  data_wdata_o[27]  (exp=0, got=X)
- 42248  data_wdata_o[26]  (exp=0, got=X)
- 42248  data_wdata_o[25]  (exp=0, got=X)
- 42248  data_wdata_o[24]  (exp=0, got=X)
- 42248  data_wdata_o[23]  (exp=0, got=X)
- 42248  data_wdata_o[22]  (exp=0, got=X)
- 42248  data_wdata_o[21]  (exp=1, got=X)
- 42248  data_wdata_o[20]  (exp=0, got=X)
- 42248  data_wdata_o[19]  (exp=0, got=X)
- 42248  data_wdata_o[18]  (exp=0, got=X)
- 42248  data_wdata_o[17]  (exp=0, got=X)
- 42248  data_wdata_o[16]  (exp=0, got=X)
- 42248  data_wdata_o[15]  (exp=0, got=X)
- 42248  data_wdata_o[14]  (exp=0, got=X)
- 42248  data_wdata_o[13]  (exp=0, got=X)
- 42248  data_wdata_o[12]  (exp=0, got=X)
- 42248  data_wdata_o[11]  (exp=1, got=X)
- 42248  data_wdata_o[10]  (exp=0, got=X)
- 42248  data_wdata_o[9]  (exp=0, got=X)
- 42248  data_wdata_o[8]  (exp=0, got=X)
- 42248  data_wdata_o[7]  (exp=0, got=X)
- 42248  data_wdata_o[6]  (exp=0, got=X)
- 42248  data_wdata_o[5]  (exp=0, got=X)
- 42248  data_wdata_o[4]  (exp=0, got=X)
- 42248  data_wdata_o[3]  (exp=0, got=X)
- 42248  data_wdata_o[2]  (exp=0, got=X)
- 42248  data_wdata_o[1]  (exp=0, got=X)
- 42248  data_wdata_o[0]  (exp=0, got=X)
- 42255  data_wdata_o[31]  (exp=0, got=X)
- 42255  data_wdata_o[30]  (exp=0, got=X)
- 42255  data_wdata_o[29]  (exp=0, got=X)
- 42255  data_wdata_o[28]  (exp=0, got=X)
- 42255  data_wdata_o[27]  (exp=0, got=X)
- 42255  data_wdata_o[26]  (exp=0, got=X)
- 42255  data_wdata_o[25]  (exp=0, got=X)
- 42255  data_wdata_o[24]  (exp=0, got=X)
- 42255  data_wdata_o[23]  (exp=0, got=X)
- 42255  data_wdata_o[22]  (exp=0, got=X)
- 42255  data_wdata_o[21]  (exp=0, got=X)
- 42255  data_wdata_o[20]  (exp=0, got=X)
- 42255  data_wdata_o[19]  (exp=0, got=X)
- 42255  data_wdata_o[18]  (exp=0, got=X)
- 42255  data_wdata_o[17]  (exp=0, got=X)
- 42255  data_wdata_o[16]  (exp=0, got=X)
- 42255  data_wdata_o[15]  (exp=0, got=X)
- 42255  data_wdata_o[14]  (exp=0, got=X)
- 42255  data_wdata_o[13]  (exp=0, got=X)
- 42255  data_wdata_o[12]  (exp=0, got=X)
- 42255  data_wdata_o[11]  (exp=0, got=X)
- 42255  data_wdata_o[10]  (exp=0, got=X)
- 42255  data_wdata_o[9]  (exp=0, got=X)
- 42255  data_wdata_o[8]  (exp=0, got=X)
- 42255  data_wdata_o[7]  (exp=0, got=X)
- 42255  data_wdata_o[6]  (exp=0, got=X)
- 42255  data_wdata_o[5]  (exp=0, got=X)
- 42255  data_wdata_o[4]  (exp=0, got=X)
- 42255  data_wdata_o[3]  (exp=0, got=X)
- 42255  data_wdata_o[2]  (exp=0, got=X)
- 42255  data_wdata_o[1]  (exp=0, got=X)
- 42255  data_wdata_o[0]  (exp=0, got=X)
- 262824  data_wdata_o[31]  (exp=0, got=X)
- 262824  data_wdata_o[30]  (exp=0, got=X)
- 262824  data_wdata_o[29]  (exp=0, got=X)
- 262824  data_wdata_o[28]  (exp=0, got=X)
- 262824  data_wdata_o[27]  (exp=0, got=X)
- 262824  data_wdata_o[26]  (exp=0, got=X)
- 262824  data_wdata_o[25]  (exp=0, got=X)
- 262824  data_wdata_o[24]  (exp=0, got=X)
- 262824  data_wdata_o[23]  (exp=0, got=X)
- 262824  data_wdata_o[22]  (exp=0, got=X)
- 262824  data_wdata_o[21]  (exp=1, got=X)
- 262824  data_wdata_o[20]  (exp=0, got=X)
- 262824  data_wdata_o[19]  (exp=0, got=X)
- 262824  data_wdata_o[18]  (exp=0, got=X)
- 262824  data_wdata_o[17]  (exp=0, got=X)
- 262824  data_wdata_o[16]  (exp=0, got=X)
- 262824  data_wdata_o[15]  (exp=0, got=X)
- 262824  data_wdata_o[14]  (exp=0, got=X)
- 262824  data_wdata_o[13]  (exp=0, got=X)
- 262824  data_wdata_o[12]  (exp=0, got=X)
- 262824  data_wdata_o[11]  (exp=1, got=X)
- 262824  data_wdata_o[10]  (exp=0, got=X)
- 262824  data_wdata_o[9]  (exp=0, got=X)
- 262824  data_wdata_o[8]  (exp=0, got=X)
- 262824  data_wdata_o[7]  (exp=0, got=X)
- 262824  data_wdata_o[6]  (exp=0, got=X)
- 262824  data_wdata_o[5]  (exp=0, got=X)
- 262824  data_wdata_o[4]  (exp=0, got=X)
- 262824  data_wdata_o[3]  (exp=0, got=X)
- 262824  data_wdata_o[2]  (exp=0, got=X)
- 262824  data_wdata_o[1]  (exp=0, got=X)
- 262824  data_wdata_o[0]  (exp=0, got=X)
- 262831  data_wdata_o[31]  (exp=0, got=X)
- 262831  data_wdata_o[30]  (exp=0, got=X)
- 262831  data_wdata_o[29]  (exp=0, got=X)
- 262831  data_wdata_o[28]  (exp=0, got=X)
- 262831  data_wdata_o[27]  (exp=0, got=X)
- 262831  data_wdata_o[26]  (exp=0, got=X)
- 262831  data_wdata_o[25]  (exp=0, got=X)
- 262831  data_wdata_o[24]  (exp=0, got=X)
- 262831  data_wdata_o[23]  (exp=0, got=X)
- 262831  data_wdata_o[22]  (exp=0, got=X)
- 262831  data_wdata_o[21]  (exp=0, got=X)
- 262831  data_wdata_o[20]  (exp=0, got=X)
- 262831  data_wdata_o[19]  (exp=0, got=X)
- 262831  data_wdata_o[18]  (exp=0, got=X)
- 262831  data_wdata_o[17]  (exp=0, got=X)
- 262831  data_wdata_o[16]  (exp=0, got=X)
- 262831  data_wdata_o[15]  (exp=0, got=X)
- 262831  data_wdata_o[14]  (exp=0, got=X)
- 262831  data_wdata_o[13]  (exp=0, got=X)
- 262831  data_wdata_o[12]  (exp=0, got=X)
- 262831  data_wdata_o[11]  (exp=0, got=X)
- 262831  data_wdata_o[10]  (exp=0, got=X)
- 262831  data_wdata_o[9]  (exp=0, got=X)
- 262831  data_wdata_o[8]  (exp=0, got=X)
- 262831  data_wdata_o[7]  (exp=0, got=X)
- 262831  data_wdata_o[6]  (exp=0, got=X)
- 262831  data_wdata_o[5]  (exp=0, got=X)
- 262831  data_wdata_o[4]  (exp=0, got=X)
- 262831  data_wdata_o[3]  (exp=0, got=X)
- 262831  data_wdata_o[2]  (exp=0, got=X)
- 262831  data_wdata_o[1]  (exp=0, got=X)
- 262831  data_wdata_o[0]  (exp=0, got=X)
- 262840  data_wdata_o[31]  (exp=0, got=X)
- 262840  data_wdata_o[30]  (exp=0, got=X)
- 262840  data_wdata_o[29]  (exp=0, got=X)
- 262840  data_wdata_o[28]  (exp=0, got=X)
- 262840  data_wdata_o[27]  (exp=0, got=X)
- 262840  data_wdata_o[26]  (exp=0, got=X)
- 262840  data_wdata_o[25]  (exp=0, got=X)
- 262840  data_wdata_o[24]  (exp=0, got=X)
- 262840  data_wdata_o[23]  (exp=0, got=X)
- 262840  data_wdata_o[22]  (exp=0, got=X)
- 262840  data_wdata_o[21]  (exp=0, got=X)
- 262840  data_wdata_o[20]  (exp=0, got=X)
- 262840  data_wdata_o[19]  (exp=0, got=X)
- 262840  data_wdata_o[18]  (exp=0, got=X)
- 262840  data_wdata_o[17]  (exp=0, got=X)
- 262840  data_wdata_o[16]  (exp=0, got=X)
- 262840  data_wdata_o[15]  (exp=0, got=X)
- 262840  data_wdata_o[14]  (exp=0, got=X)
- 262840  data_wdata_o[13]  (exp=0, got=X)
- 262840  data_wdata_o[12]  (exp=0, got=X)
- 262840  data_wdata_o[11]  (exp=0, got=X)
- 262840  data_wdata_o[10]  (exp=0, got=X)
- 262840  data_wdata_o[9]  (exp=0, got=X)
- 262840  data_wdata_o[8]  (exp=0, got=X)
- 262840  data_wdata_o[7]  (exp=0, got=X)
- 262840  data_wdata_o[6]  (exp=0, got=X)
- 262840  data_wdata_o[5]  (exp=0, got=X)
- 262840  data_wdata_o[4]  (exp=0, got=X)
- 262840  data_wdata_o[3]  (exp=0, got=X)
- 262840  data_wdata_o[2]  (exp=0, got=X)
- 262840  data_wdata_o[1]  (exp=0, got=X)
- 262840  data_wdata_o[0]  (exp=0, got=X)
- 262852  data_wdata_o[31]  (exp=0, got=X)
- 262852  data_wdata_o[30]  (exp=0, got=X)
- 262852  data_wdata_o[29]  (exp=0, got=X)
- 262852  data_wdata_o[28]  (exp=0, got=X)
- 262852  data_wdata_o[27]  (exp=0, got=X)
- 262852  data_wdata_o[26]  (exp=0, got=X)
- 262852  data_wdata_o[25]  (exp=0, got=X)
- 262852  data_wdata_o[24]  (exp=0, got=X)
- 262852  data_wdata_o[23]  (exp=0, got=X)
- 262852  data_wdata_o[22]  (exp=0, got=X)
- 262852  data_wdata_o[21]  (exp=1, got=X)
- 262852  data_wdata_o[20]  (exp=0, got=X)
- 262852  data_wdata_o[19]  (exp=0, got=X)
- 262852  data_wdata_o[18]  (exp=0, got=X)
- 262852  data_wdata_o[17]  (exp=0, got=X)
- 262852  data_wdata_o[16]  (exp=0, got=X)
- 262852  data_wdata_o[15]  (exp=0, got=X)
- 262852  data_wdata_o[14]  (exp=0, got=X)
- 262852  data_wdata_o[13]  (exp=0, got=X)
- 262852  data_wdata_o[12]  (exp=0, got=X)
- 262852  data_wdata_o[11]  (exp=1, got=X)
- 262852  data_wdata_o[10]  (exp=0, got=X)
- 262852  data_wdata_o[9]  (exp=0, got=X)
- 262852  data_wdata_o[8]  (exp=0, got=X)
- 262852  data_wdata_o[7]  (exp=0, got=X)
- 262852  data_wdata_o[6]  (exp=0, got=X)
- 262852  data_wdata_o[5]  (exp=0, got=X)
- 262852  data_wdata_o[4]  (exp=0, got=X)
- 262852  data_wdata_o[3]  (exp=0, got=X)
- 262852  data_wdata_o[2]  (exp=0, got=X)
- 262852  data_wdata_o[1]  (exp=0, got=X)
- 262852  data_wdata_o[0]  (exp=0, got=X)
- 262859  data_wdata_o[31]  (exp=0, got=X)
- 262859  data_wdata_o[30]  (exp=0, got=X)
- 262859  data_wdata_o[29]  (exp=0, got=X)
- 262859  data_wdata_o[28]  (exp=0, got=X)
- 262859  data_wdata_o[27]  (exp=0, got=X)
- 262859  data_wdata_o[26]  (exp=0, got=X)
- 262859  data_wdata_o[25]  (exp=0, got=X)
- 262859  data_wdata_o[24]  (exp=0, got=X)
- 262859  data_wdata_o[23]  (exp=0, got=X)
- 262859  data_wdata_o[22]  (exp=0, got=X)
- 262859  data_wdata_o[21]  (exp=0, got=X)
- 262859  data_wdata_o[20]  (exp=0, got=X)
- 262859  data_wdata_o[19]  (exp=0, got=X)
- 262859  data_wdata_o[18]  (exp=0, got=X)
- 262859  data_wdata_o[17]  (exp=0, got=X)
- 262859  data_wdata_o[16]  (exp=0, got=X)
- 262859  data_wdata_o[15]  (exp=0, got=X)
- 262859  data_wdata_o[14]  (exp=0, got=X)
- 262859  data_wdata_o[13]  (exp=0, got=X)
- 262859  data_wdata_o[12]  (exp=0, got=X)
- 262859  data_wdata_o[11]  (exp=0, got=X)
- 262859  data_wdata_o[10]  (exp=0, got=X)
- 262859  data_wdata_o[9]  (exp=0, got=X)
- 262859  data_wdata_o[8]  (exp=0, got=X)
- 262859  data_wdata_o[7]  (exp=0, got=X)
- 262859  data_wdata_o[6]  (exp=0, got=X)
- 262859  data_wdata_o[5]  (exp=0, got=X)
- 262859  data_wdata_o[4]  (exp=0, got=X)
- 262859  data_wdata_o[3]  (exp=0, got=X)
- 262859  data_wdata_o[2]  (exp=0, got=X)
- 262859  data_wdata_o[1]  (exp=0, got=X)
- 262859  data_wdata_o[0]  (exp=0, got=X)
- 262868  data_wdata_o[31]  (exp=0, got=X)
- 262868  data_wdata_o[30]  (exp=0, got=X)
- 262868  data_wdata_o[29]  (exp=0, got=X)
- 262868  data_wdata_o[28]  (exp=0, got=X)
- 262868  data_wdata_o[27]  (exp=0, got=X)
- 262868  data_wdata_o[26]  (exp=0, got=X)
- 262868  data_wdata_o[25]  (exp=0, got=X)
- 262868  data_wdata_o[24]  (exp=0, got=X)
- 262868  data_wdata_o[23]  (exp=0, got=X)
- 262868  data_wdata_o[22]  (exp=0, got=X)
- 262868  data_wdata_o[21]  (exp=0, got=X)
- 262868  data_wdata_o[20]  (exp=0, got=X)
- 262868  data_wdata_o[19]  (exp=0, got=X)
- 262868  data_wdata_o[18]  (exp=0, got=X)
- 262868  data_wdata_o[17]  (exp=0, got=X)
- 262868  data_wdata_o[16]  (exp=0, got=X)
- 262868  data_wdata_o[15]  (exp=0, got=X)
- 262868  data_wdata_o[14]  (exp=0, got=X)
- 262868  data_wdata_o[13]  (exp=0, got=X)
- 262868  data_wdata_o[12]  (exp=0, got=X)
- 262868  data_wdata_o[11]  (exp=0, got=X)
- 262868  data_wdata_o[10]  (exp=0, got=X)
- 262868  data_wdata_o[9]  (exp=0, got=X)
- 262868  data_wdata_o[8]  (exp=0, got=X)
- 262868  data_wdata_o[7]  (exp=0, got=X)
- 262868  data_wdata_o[6]  (exp=0, got=X)
- 262868  data_wdata_o[5]  (exp=0, got=X)
- 262868  data_wdata_o[4]  (exp=0, got=X)
- 262868  data_wdata_o[3]  (exp=0, got=X)
- 262868  data_wdata_o[2]  (exp=0, got=X)
- 262868  data_wdata_o[1]  (exp=0, got=X)
- 262868  data_wdata_o[0]  (exp=0, got=X)
- 300913  data_wdata_o[31]  (exp=0, got=X)
- 300913  data_wdata_o[30]  (exp=0, got=X)
- 300913  data_wdata_o[29]  (exp=0, got=X)
- 300913  data_wdata_o[28]  (exp=0, got=X)
- 300913  data_wdata_o[27]  (exp=0, got=X)
- 300913  data_wdata_o[26]  (exp=0, got=X)
- 300913  data_wdata_o[25]  (exp=0, got=X)
- 300913  data_wdata_o[24]  (exp=0, got=X)
- 300913  data_wdata_o[23]  (exp=0, got=X)
- 300913  data_wdata_o[22]  (exp=0, got=X)
- 300913  data_wdata_o[21]  (exp=0, got=X)
- 300913  data_wdata_o[20]  (exp=0, got=X)
- 300913  data_wdata_o[19]  (exp=0, got=X)
- 300913  data_wdata_o[18]  (exp=0, got=X)
- 300913  data_wdata_o[17]  (exp=0, got=X)
- 300913  data_wdata_o[16]  (exp=0, got=X)
- 300913  data_wdata_o[15]  (exp=0, got=X)
- 300913  data_wdata_o[14]  (exp=0, got=X)
- 300913  data_wdata_o[13]  (exp=0, got=X)
- 300913  data_wdata_o[12]  (exp=0, got=X)
- 300913  data_wdata_o[11]  (exp=0, got=X)
- 300913  data_wdata_o[10]  (exp=0, got=X)
- 300913  data_wdata_o[9]  (exp=0, got=X)
- 300913  data_wdata_o[8]  (exp=0, got=X)
- 300913  data_wdata_o[7]  (exp=0, got=X)
- 300913  data_wdata_o[6]  (exp=0, got=X)
- 300913  data_wdata_o[5]  (exp=0, got=X)
- 300913  data_wdata_o[4]  (exp=0, got=X)
- 300913  data_wdata_o[3]  (exp=0, got=X)
- 300913  data_wdata_o[2]  (exp=0, got=X)
- 300913  data_wdata_o[1]  (exp=0, got=X)
- 300913  data_wdata_o[0]  (exp=0, got=X)
- Simulation completed: #patterns=300951/601911, #fail_pats=10(10), #failing_meas=320(320), #rejected_pats=0, CPU time=166.39
+ Begin sequential simulation of 306421 external patterns.
+ 47714  data_wdata_o[31]  (exp=0, got=X)
+ 47714  data_wdata_o[30]  (exp=0, got=X)
+ 47714  data_wdata_o[29]  (exp=1, got=X)
+ 47714  data_wdata_o[28]  (exp=1, got=X)
+ 47714  data_wdata_o[27]  (exp=0, got=X)
+ 47714  data_wdata_o[26]  (exp=0, got=X)
+ 47714  data_wdata_o[25]  (exp=1, got=X)
+ 47714  data_wdata_o[24]  (exp=1, got=X)
+ 47714  data_wdata_o[23]  (exp=0, got=X)
+ 47714  data_wdata_o[22]  (exp=0, got=X)
+ 47714  data_wdata_o[21]  (exp=1, got=X)
+ 47714  data_wdata_o[20]  (exp=1, got=X)
+ 47714  data_wdata_o[19]  (exp=0, got=X)
+ 47714  data_wdata_o[18]  (exp=0, got=X)
+ 47714  data_wdata_o[17]  (exp=1, got=X)
+ 47714  data_wdata_o[16]  (exp=1, got=X)
+ 47714  data_wdata_o[15]  (exp=0, got=X)
+ 47714  data_wdata_o[14]  (exp=0, got=X)
+ 47714  data_wdata_o[13]  (exp=1, got=X)
+ 47714  data_wdata_o[12]  (exp=1, got=X)
+ 47714  data_wdata_o[11]  (exp=0, got=X)
+ 47714  data_wdata_o[10]  (exp=0, got=X)
+ 47714  data_wdata_o[9]  (exp=1, got=X)
+ 47714  data_wdata_o[8]  (exp=1, got=X)
+ 47714  data_wdata_o[7]  (exp=0, got=X)
+ 47714  data_wdata_o[6]  (exp=0, got=X)
+ 47714  data_wdata_o[5]  (exp=1, got=X)
+ 47714  data_wdata_o[4]  (exp=1, got=X)
+ 47714  data_wdata_o[3]  (exp=0, got=X)
+ 47714  data_wdata_o[2]  (exp=0, got=X)
+ 47714  data_wdata_o[1]  (exp=1, got=X)
+ 47714  data_wdata_o[0]  (exp=1, got=X)
+ 47716  data_wdata_o[31]  (exp=0, got=X)
+ 47716  data_wdata_o[30]  (exp=0, got=X)
+ 47716  data_wdata_o[29]  (exp=0, got=X)
+ 47716  data_wdata_o[28]  (exp=0, got=X)
+ 47716  data_wdata_o[27]  (exp=0, got=X)
+ 47716  data_wdata_o[26]  (exp=0, got=X)
+ 47716  data_wdata_o[25]  (exp=0, got=X)
+ 47716  data_wdata_o[24]  (exp=0, got=X)
+ 47716  data_wdata_o[23]  (exp=0, got=X)
+ 47716  data_wdata_o[22]  (exp=0, got=X)
+ 47716  data_wdata_o[21]  (exp=1, got=X)
+ 47716  data_wdata_o[20]  (exp=0, got=X)
+ 47716  data_wdata_o[19]  (exp=0, got=X)
+ 47716  data_wdata_o[18]  (exp=0, got=X)
+ 47716  data_wdata_o[17]  (exp=0, got=X)
+ 47716  data_wdata_o[16]  (exp=0, got=X)
+ 47716  data_wdata_o[15]  (exp=0, got=X)
+ 47716  data_wdata_o[14]  (exp=0, got=X)
+ 47716  data_wdata_o[13]  (exp=0, got=X)
+ 47716  data_wdata_o[12]  (exp=0, got=X)
+ 47716  data_wdata_o[11]  (exp=1, got=X)
+ 47716  data_wdata_o[10]  (exp=0, got=X)
+ 47716  data_wdata_o[9]  (exp=0, got=X)
+ 47716  data_wdata_o[8]  (exp=0, got=X)
+ 47716  data_wdata_o[7]  (exp=0, got=X)
+ 47716  data_wdata_o[6]  (exp=0, got=X)
+ 47716  data_wdata_o[5]  (exp=0, got=X)
+ 47716  data_wdata_o[4]  (exp=0, got=X)
+ 47716  data_wdata_o[3]  (exp=0, got=X)
+ 47716  data_wdata_o[2]  (exp=0, got=X)
+ 47716  data_wdata_o[1]  (exp=0, got=X)
+ 47716  data_wdata_o[0]  (exp=0, got=X)
+ 47723  data_wdata_o[31]  (exp=0, got=X)
+ 47723  data_wdata_o[30]  (exp=0, got=X)
+ 47723  data_wdata_o[29]  (exp=0, got=X)
+ 47723  data_wdata_o[28]  (exp=0, got=X)
+ 47723  data_wdata_o[27]  (exp=0, got=X)
+ 47723  data_wdata_o[26]  (exp=0, got=X)
+ 47723  data_wdata_o[25]  (exp=0, got=X)
+ 47723  data_wdata_o[24]  (exp=0, got=X)
+ 47723  data_wdata_o[23]  (exp=0, got=X)
+ 47723  data_wdata_o[22]  (exp=0, got=X)
+ 47723  data_wdata_o[21]  (exp=0, got=X)
+ 47723  data_wdata_o[20]  (exp=0, got=X)
+ 47723  data_wdata_o[19]  (exp=0, got=X)
+ 47723  data_wdata_o[18]  (exp=0, got=X)
+ 47723  data_wdata_o[17]  (exp=0, got=X)
+ 47723  data_wdata_o[16]  (exp=0, got=X)
+ 47723  data_wdata_o[15]  (exp=0, got=X)
+ 47723  data_wdata_o[14]  (exp=0, got=X)
+ 47723  data_wdata_o[13]  (exp=0, got=X)
+ 47723  data_wdata_o[12]  (exp=0, got=X)
+ 47723  data_wdata_o[11]  (exp=0, got=X)
+ 47723  data_wdata_o[10]  (exp=0, got=X)
+ 47723  data_wdata_o[9]  (exp=0, got=X)
+ 47723  data_wdata_o[8]  (exp=0, got=X)
+ 47723  data_wdata_o[7]  (exp=0, got=X)
+ 47723  data_wdata_o[6]  (exp=0, got=X)
+ 47723  data_wdata_o[5]  (exp=0, got=X)
+ 47723  data_wdata_o[4]  (exp=0, got=X)
+ 47723  data_wdata_o[3]  (exp=0, got=X)
+ 47723  data_wdata_o[2]  (exp=0, got=X)
+ 47723  data_wdata_o[1]  (exp=0, got=X)
+ 47723  data_wdata_o[0]  (exp=0, got=X)
+ 268294  data_wdata_o[31]  (exp=0, got=X)
+ 268294  data_wdata_o[30]  (exp=0, got=X)
+ 268294  data_wdata_o[29]  (exp=0, got=X)
+ 268294  data_wdata_o[28]  (exp=0, got=X)
+ 268294  data_wdata_o[27]  (exp=0, got=X)
+ 268294  data_wdata_o[26]  (exp=0, got=X)
+ 268294  data_wdata_o[25]  (exp=0, got=X)
+ 268294  data_wdata_o[24]  (exp=0, got=X)
+ 268294  data_wdata_o[23]  (exp=0, got=X)
+ 268294  data_wdata_o[22]  (exp=0, got=X)
+ 268294  data_wdata_o[21]  (exp=1, got=X)
+ 268294  data_wdata_o[20]  (exp=0, got=X)
+ 268294  data_wdata_o[19]  (exp=0, got=X)
+ 268294  data_wdata_o[18]  (exp=0, got=X)
+ 268294  data_wdata_o[17]  (exp=0, got=X)
+ 268294  data_wdata_o[16]  (exp=0, got=X)
+ 268294  data_wdata_o[15]  (exp=0, got=X)
+ 268294  data_wdata_o[14]  (exp=0, got=X)
+ 268294  data_wdata_o[13]  (exp=0, got=X)
+ 268294  data_wdata_o[12]  (exp=0, got=X)
+ 268294  data_wdata_o[11]  (exp=1, got=X)
+ 268294  data_wdata_o[10]  (exp=0, got=X)
+ 268294  data_wdata_o[9]  (exp=0, got=X)
+ 268294  data_wdata_o[8]  (exp=0, got=X)
+ 268294  data_wdata_o[7]  (exp=0, got=X)
+ 268294  data_wdata_o[6]  (exp=0, got=X)
+ 268294  data_wdata_o[5]  (exp=0, got=X)
+ 268294  data_wdata_o[4]  (exp=0, got=X)
+ 268294  data_wdata_o[3]  (exp=0, got=X)
+ 268294  data_wdata_o[2]  (exp=0, got=X)
+ 268294  data_wdata_o[1]  (exp=0, got=X)
+ 268294  data_wdata_o[0]  (exp=0, got=X)
+ 268301  data_wdata_o[31]  (exp=0, got=X)
+ 268301  data_wdata_o[30]  (exp=0, got=X)
+ 268301  data_wdata_o[29]  (exp=0, got=X)
+ 268301  data_wdata_o[28]  (exp=0, got=X)
+ 268301  data_wdata_o[27]  (exp=0, got=X)
+ 268301  data_wdata_o[26]  (exp=0, got=X)
+ 268301  data_wdata_o[25]  (exp=0, got=X)
+ 268301  data_wdata_o[24]  (exp=0, got=X)
+ 268301  data_wdata_o[23]  (exp=0, got=X)
+ 268301  data_wdata_o[22]  (exp=0, got=X)
+ 268301  data_wdata_o[21]  (exp=0, got=X)
+ 268301  data_wdata_o[20]  (exp=0, got=X)
+ 268301  data_wdata_o[19]  (exp=0, got=X)
+ 268301  data_wdata_o[18]  (exp=0, got=X)
+ 268301  data_wdata_o[17]  (exp=0, got=X)
+ 268301  data_wdata_o[16]  (exp=0, got=X)
+ 268301  data_wdata_o[15]  (exp=0, got=X)
+ 268301  data_wdata_o[14]  (exp=0, got=X)
+ 268301  data_wdata_o[13]  (exp=0, got=X)
+ 268301  data_wdata_o[12]  (exp=0, got=X)
+ 268301  data_wdata_o[11]  (exp=0, got=X)
+ 268301  data_wdata_o[10]  (exp=0, got=X)
+ 268301  data_wdata_o[9]  (exp=0, got=X)
+ 268301  data_wdata_o[8]  (exp=0, got=X)
+ 268301  data_wdata_o[7]  (exp=0, got=X)
+ 268301  data_wdata_o[6]  (exp=0, got=X)
+ 268301  data_wdata_o[5]  (exp=0, got=X)
+ 268301  data_wdata_o[4]  (exp=0, got=X)
+ 268301  data_wdata_o[3]  (exp=0, got=X)
+ 268301  data_wdata_o[2]  (exp=0, got=X)
+ 268301  data_wdata_o[1]  (exp=0, got=X)
+ 268301  data_wdata_o[0]  (exp=0, got=X)
+ 268310  data_wdata_o[31]  (exp=0, got=X)
+ 268310  data_wdata_o[30]  (exp=0, got=X)
+ 268310  data_wdata_o[29]  (exp=0, got=X)
+ 268310  data_wdata_o[28]  (exp=0, got=X)
+ 268310  data_wdata_o[27]  (exp=0, got=X)
+ 268310  data_wdata_o[26]  (exp=0, got=X)
+ 268310  data_wdata_o[25]  (exp=0, got=X)
+ 268310  data_wdata_o[24]  (exp=0, got=X)
+ 268310  data_wdata_o[23]  (exp=0, got=X)
+ 268310  data_wdata_o[22]  (exp=0, got=X)
+ 268310  data_wdata_o[21]  (exp=0, got=X)
+ 268310  data_wdata_o[20]  (exp=0, got=X)
+ 268310  data_wdata_o[19]  (exp=0, got=X)
+ 268310  data_wdata_o[18]  (exp=0, got=X)
+ 268310  data_wdata_o[17]  (exp=0, got=X)
+ 268310  data_wdata_o[16]  (exp=0, got=X)
+ 268310  data_wdata_o[15]  (exp=0, got=X)
+ 268310  data_wdata_o[14]  (exp=0, got=X)
+ 268310  data_wdata_o[13]  (exp=0, got=X)
+ 268310  data_wdata_o[12]  (exp=0, got=X)
+ 268310  data_wdata_o[11]  (exp=0, got=X)
+ 268310  data_wdata_o[10]  (exp=0, got=X)
+ 268310  data_wdata_o[9]  (exp=0, got=X)
+ 268310  data_wdata_o[8]  (exp=0, got=X)
+ 268310  data_wdata_o[7]  (exp=0, got=X)
+ 268310  data_wdata_o[6]  (exp=0, got=X)
+ 268310  data_wdata_o[5]  (exp=0, got=X)
+ 268310  data_wdata_o[4]  (exp=0, got=X)
+ 268310  data_wdata_o[3]  (exp=0, got=X)
+ 268310  data_wdata_o[2]  (exp=0, got=X)
+ 268310  data_wdata_o[1]  (exp=0, got=X)
+ 268310  data_wdata_o[0]  (exp=0, got=X)
+ 268322  data_wdata_o[31]  (exp=0, got=X)
+ 268322  data_wdata_o[30]  (exp=0, got=X)
+ 268322  data_wdata_o[29]  (exp=0, got=X)
+ 268322  data_wdata_o[28]  (exp=0, got=X)
+ 268322  data_wdata_o[27]  (exp=0, got=X)
+ 268322  data_wdata_o[26]  (exp=0, got=X)
+ 268322  data_wdata_o[25]  (exp=0, got=X)
+ 268322  data_wdata_o[24]  (exp=0, got=X)
+ 268322  data_wdata_o[23]  (exp=0, got=X)
+ 268322  data_wdata_o[22]  (exp=0, got=X)
+ 268322  data_wdata_o[21]  (exp=1, got=X)
+ 268322  data_wdata_o[20]  (exp=0, got=X)
+ 268322  data_wdata_o[19]  (exp=0, got=X)
+ 268322  data_wdata_o[18]  (exp=0, got=X)
+ 268322  data_wdata_o[17]  (exp=0, got=X)
+ 268322  data_wdata_o[16]  (exp=0, got=X)
+ 268322  data_wdata_o[15]  (exp=0, got=X)
+ 268322  data_wdata_o[14]  (exp=0, got=X)
+ 268322  data_wdata_o[13]  (exp=0, got=X)
+ 268322  data_wdata_o[12]  (exp=0, got=X)
+ 268322  data_wdata_o[11]  (exp=1, got=X)
+ 268322  data_wdata_o[10]  (exp=0, got=X)
+ 268322  data_wdata_o[9]  (exp=0, got=X)
+ 268322  data_wdata_o[8]  (exp=0, got=X)
+ 268322  data_wdata_o[7]  (exp=0, got=X)
+ 268322  data_wdata_o[6]  (exp=0, got=X)
+ 268322  data_wdata_o[5]  (exp=0, got=X)
+ 268322  data_wdata_o[4]  (exp=0, got=X)
+ 268322  data_wdata_o[3]  (exp=0, got=X)
+ 268322  data_wdata_o[2]  (exp=0, got=X)
+ 268322  data_wdata_o[1]  (exp=0, got=X)
+ 268322  data_wdata_o[0]  (exp=0, got=X)
+ 268329  data_wdata_o[31]  (exp=0, got=X)
+ 268329  data_wdata_o[30]  (exp=0, got=X)
+ 268329  data_wdata_o[29]  (exp=0, got=X)
+ 268329  data_wdata_o[28]  (exp=0, got=X)
+ 268329  data_wdata_o[27]  (exp=0, got=X)
+ 268329  data_wdata_o[26]  (exp=0, got=X)
+ 268329  data_wdata_o[25]  (exp=0, got=X)
+ 268329  data_wdata_o[24]  (exp=0, got=X)
+ 268329  data_wdata_o[23]  (exp=0, got=X)
+ 268329  data_wdata_o[22]  (exp=0, got=X)
+ 268329  data_wdata_o[21]  (exp=0, got=X)
+ 268329  data_wdata_o[20]  (exp=0, got=X)
+ 268329  data_wdata_o[19]  (exp=0, got=X)
+ 268329  data_wdata_o[18]  (exp=0, got=X)
+ 268329  data_wdata_o[17]  (exp=0, got=X)
+ 268329  data_wdata_o[16]  (exp=0, got=X)
+ 268329  data_wdata_o[15]  (exp=0, got=X)
+ 268329  data_wdata_o[14]  (exp=0, got=X)
+ 268329  data_wdata_o[13]  (exp=0, got=X)
+ 268329  data_wdata_o[12]  (exp=0, got=X)
+ 268329  data_wdata_o[11]  (exp=0, got=X)
+ 268329  data_wdata_o[10]  (exp=0, got=X)
+ 268329  data_wdata_o[9]  (exp=0, got=X)
+ 268329  data_wdata_o[8]  (exp=0, got=X)
+ 268329  data_wdata_o[7]  (exp=0, got=X)
+ 268329  data_wdata_o[6]  (exp=0, got=X)
+ 268329  data_wdata_o[5]  (exp=0, got=X)
+ 268329  data_wdata_o[4]  (exp=0, got=X)
+ 268329  data_wdata_o[3]  (exp=0, got=X)
+ 268329  data_wdata_o[2]  (exp=0, got=X)
+ 268329  data_wdata_o[1]  (exp=0, got=X)
+ 268329  data_wdata_o[0]  (exp=0, got=X)
+ 268338  data_wdata_o[31]  (exp=0, got=X)
+ 268338  data_wdata_o[30]  (exp=0, got=X)
+ 268338  data_wdata_o[29]  (exp=0, got=X)
+ 268338  data_wdata_o[28]  (exp=0, got=X)
+ 268338  data_wdata_o[27]  (exp=0, got=X)
+ 268338  data_wdata_o[26]  (exp=0, got=X)
+ 268338  data_wdata_o[25]  (exp=0, got=X)
+ 268338  data_wdata_o[24]  (exp=0, got=X)
+ 268338  data_wdata_o[23]  (exp=0, got=X)
+ 268338  data_wdata_o[22]  (exp=0, got=X)
+ 268338  data_wdata_o[21]  (exp=0, got=X)
+ 268338  data_wdata_o[20]  (exp=0, got=X)
+ 268338  data_wdata_o[19]  (exp=0, got=X)
+ 268338  data_wdata_o[18]  (exp=0, got=X)
+ 268338  data_wdata_o[17]  (exp=0, got=X)
+ 268338  data_wdata_o[16]  (exp=0, got=X)
+ 268338  data_wdata_o[15]  (exp=0, got=X)
+ 268338  data_wdata_o[14]  (exp=0, got=X)
+ 268338  data_wdata_o[13]  (exp=0, got=X)
+ 268338  data_wdata_o[12]  (exp=0, got=X)
+ 268338  data_wdata_o[11]  (exp=0, got=X)
+ 268338  data_wdata_o[10]  (exp=0, got=X)
+ 268338  data_wdata_o[9]  (exp=0, got=X)
+ 268338  data_wdata_o[8]  (exp=0, got=X)
+ 268338  data_wdata_o[7]  (exp=0, got=X)
+ 268338  data_wdata_o[6]  (exp=0, got=X)
+ 268338  data_wdata_o[5]  (exp=0, got=X)
+ 268338  data_wdata_o[4]  (exp=0, got=X)
+ 268338  data_wdata_o[3]  (exp=0, got=X)
+ 268338  data_wdata_o[2]  (exp=0, got=X)
+ 268338  data_wdata_o[1]  (exp=0, got=X)
+ 268338  data_wdata_o[0]  (exp=0, got=X)
+ 306383  data_wdata_o[31]  (exp=0, got=X)
+ 306383  data_wdata_o[30]  (exp=0, got=X)
+ 306383  data_wdata_o[29]  (exp=0, got=X)
+ 306383  data_wdata_o[28]  (exp=0, got=X)
+ 306383  data_wdata_o[27]  (exp=0, got=X)
+ 306383  data_wdata_o[26]  (exp=0, got=X)
+ 306383  data_wdata_o[25]  (exp=0, got=X)
+ 306383  data_wdata_o[24]  (exp=0, got=X)
+ 306383  data_wdata_o[23]  (exp=0, got=X)
+ 306383  data_wdata_o[22]  (exp=0, got=X)
+ 306383  data_wdata_o[21]  (exp=0, got=X)
+ 306383  data_wdata_o[20]  (exp=0, got=X)
+ 306383  data_wdata_o[19]  (exp=0, got=X)
+ 306383  data_wdata_o[18]  (exp=0, got=X)
+ 306383  data_wdata_o[17]  (exp=0, got=X)
+ 306383  data_wdata_o[16]  (exp=0, got=X)
+ 306383  data_wdata_o[15]  (exp=0, got=X)
+ 306383  data_wdata_o[14]  (exp=0, got=X)
+ 306383  data_wdata_o[13]  (exp=0, got=X)
+ 306383  data_wdata_o[12]  (exp=0, got=X)
+ 306383  data_wdata_o[11]  (exp=0, got=X)
+ 306383  data_wdata_o[10]  (exp=0, got=X)
+ 306383  data_wdata_o[9]  (exp=0, got=X)
+ 306383  data_wdata_o[8]  (exp=0, got=X)
+ 306383  data_wdata_o[7]  (exp=0, got=X)
+ 306383  data_wdata_o[6]  (exp=0, got=X)
+ 306383  data_wdata_o[5]  (exp=0, got=X)
+ 306383  data_wdata_o[4]  (exp=0, got=X)
+ 306383  data_wdata_o[3]  (exp=0, got=X)
+ 306383  data_wdata_o[2]  (exp=0, got=X)
+ 306383  data_wdata_o[1]  (exp=0, got=X)
+ 306383  data_wdata_o[0]  (exp=0, got=X)
+ Simulation completed: #patterns=306421/612851, #fail_pats=10(10), #failing_meas=320(320), #rejected_pats=0, CPU time=169.56
 ## Fault list (select one of the following)
-add_faults -all
- 269436 faults were added to fault list.
-remove_faults RISCY_PMP_pmp_unit_i
- 76610 faults were removed from the fault list, CPU_time=2.26 sec.
-remove_faults cs_registers_i
- 30680 faults were removed from the fault list.
+#add_faults -all 
+#remove_faults RISCY_PMP_pmp_unit_i
+#remove_faults cs_registers_i
+#remove_faults if_stage_i
+#remove_faults ex_stage_i
+#remove_faults if_stage_i/prefetch_128_prefetch_buffer_i 
+#remove_faults id_stage_i/hwloop_regs_i
+#remove_faults if_stage_i/compressed_decoder_i
+#remove_faults id_stage_i/registers_i
+#remove_faults id_stage_i/decoder_i
+#remove_faults id_stage_i/controller_i
+#remove_faults id_stage_i/int_controller_i
+#remove_faults if_stage_i/hwloop_controller_i
+#remove_faults ex_stage_i/alu_i
+#remove_faults ex_stage_i/mult_i
+#remove_faults load_store_unit_i
+#remove_faults RISCY_PMP_pmp_unit_i
+#remove_faults cs_registers_i
+#add_faults load_store_unit_i
+#add_faults if_stage_i/prefetch_128_prefetch_buffer_i 
+#add_faults id_stage_i/hwloop_regs_i
+#add_faults if_stage_i/compressed_decoder_i
+#add_faults id_stage_i/registers_i
+#add_faults id_stage_i/decoder_i
+#add_faults id_stage_i/controller_i
+#add_faults id_stage_i/int_controller_i
+#add_faults if_stage_i/hwloop_controller_i
+#add_faults ex_stage_i/alu_i
+#add_faults ex_stage_i/mult_i
+#add_faults load_store_unit_i
+read_faults fsim_faults.txt -force_retain_code -add
+ 162146 faults were read in and 162146 new faults were added to fault list.
 ## Fault simulation
 run_fault_sim -sequential
  ------------------------------------------------------------------------------
- Begin sequential fault simulation of 161802 faults on 300951 external patterns.
+ Begin sequential fault simulation of 19200 faults on 306421 external patterns.
  -----------------------------------------------------------
  #faults    pass #faults   cum. #faults     test    process
  simulated  detect/total   detect/active  coverage  CPU time
  ---------  -------------  -------------  --------  --------
- 1764         1495   1764    1495 160307     0.94%   1543.18
- 3236         1059   1472    2554 159248     1.63%   3951.99
- 4706         1153   1470    3707 158095     2.41%   8022.19
- 6574         1017   1868    4724 157078     3.04%   9665.27
- 8430         1404   1856    6128 155674     3.91%  10667.10
- 10271        1281   1841    7409 154393     4.70%  11761.25
- 12047        1377   1776    8786 153016     5.55%  13321.14
- 13709        1404   1662   10190 151612     6.42%  13980.73
- 15452        1404   1743   11594 150208     7.29%  14990.85
- 17189        1441   1737   13035 148767     8.18%  15615.87
- 18915        1473   1726   14508 147294     9.09%  16293.14
- 20675        1447   1760   15955 145847     9.98%  17244.95
- 22512        1521   1837   17476 144326    10.92%  18265.75
- 24156        1377   1644   18853 142949    11.77%  18928.23
- 25994        1369   1838   20222 141580    12.62%  19951.72
- 27735        1486   1741   21708 140094    13.54%  20897.30
- 29566        1539   1831   23247 138555    14.49%  21558.31
- 31140        1347   1574   24594 137208    15.32%  22218.25
- 33049        1522   1909   26116 135686    16.26%  23270.88
- 34786        1604   1737   27720 134082    17.25%  23855.59
- 36458        1416   1672   29136 132666    18.13%  24885.29
- 38101        1401   1643   30537 131265    19.00%  26562.51
- 39951        1733   1850   32270 129532    20.07%  27200.87
- 41507        1430   1556   33700 128102    20.95%  27736.23
- 43268        1511   1761   35211 126591    21.89%  28865.22
- 44828        1439   1560   36650 125152    22.78%  29385.10
- 46531        1602   1703   38252 123550    23.77%  29991.03
- 48182        1543   1651   39795 122007    24.72%  30503.07
- 49896        1538   1714   41333 120469    25.67%  31595.49
- 51535        1531   1639   42864 118938    26.62%  32133.18
- 53242        1530   1707   44394 117408    27.57%  33461.83
- 55026        1545   1784   45939 115863    28.56%  34938.38
- 56705        1513   1679   47452 114350    29.51%  36432.96
- 58515        1568   1810   49020 112782    30.48%  38153.78
- 60233        1471   1718   50491 111311    31.41%  40336.82
- 61503        1106   1270   51597 110205    32.11%  41885.92
- 63438        1501   1935   53098 108704    33.05%  43839.10
- 65239        1499   1801   54597 107205    34.00%  46194.97
- 67096        1498   1857   56095 105707    34.94%  48383.30
- 68891        1600   1795   57695 104107    35.95%  50616.62
- 70712        1658   1821   59353 102449    36.98%  51801.63
- 72628        1893   1916   61246 100556    38.15%  52473.48
- 74457        1779   1829   63025  98777    39.25%  53503.87
- 76279        1785   1822   64810  96992    40.36%  54444.42
- 78018        1408   1739   66218  95584    41.24%  56281.88
- 79934        1844   1916   68062  93740    42.39%  57912.43
- 81789        1782   1855   69844  91958    43.50%  59511.30
- 83546        1089   1757   70933  90869    44.18%  61501.62
- 85361        1568   1815   72501  89301    45.16%  63563.88
- 86920         899   1559   73400  88402    45.72%  66383.90
- 88729        1397   1809   74797  87005    46.60%  68534.81
- 90523        1304   1794   76101  85701    47.42%  70822.98
- 92374        1823   1851   77924  83878    48.54%  71285.89
- 94244        1850   1870   79774  82028    49.69%  71754.24
- 96226        1742   1982   81516  80286    50.76%  72424.16
- 97908        1452   1682   82968  78834    51.66%  73466.73
- 99731        1799   1823   84767  77035    52.77%  74212.23
- 101459       1699   1728   86466  75336    53.83%  74938.97
- 103167       1559   1708   88025  73777    54.79%  76193.01
- 104818       1477   1651   89502  72300    55.71%  77370.81
- 106385       1307   1567   90809  70993    56.52%  78649.87
- 108270       1794   1885   92603  69199    57.63%  79241.81
- 110151       1616   1881   94219  67583    58.63%  80274.17
- 111626       1059   1475   95278  66524    59.29%  81191.95
- 113002       1274   1376   96552  65250    60.08%  82661.11
- 114623       1616   1621   98168  63634    61.08%  83306.09
- 116282       1559   1659   99727  62075    62.05%  84339.45
- 118067       1659   1785  101386  60416    63.07%  85293.18
- 119531       1396   1464  102782  59020    63.93%  85788.05
- 121272       1615   1741  104397  57405    64.93%  86470.36
- 123091       1657   1819  106054  55748    65.96%  87543.15
- 124770       1677   1679  107731  54071    67.00%  88162.11
- 126133       1278   1363  109009  52793    67.81%  89592.17
- 127638       1379   1505  110388  51414    68.69%  91131.98
- 129037       1327   1399  111715  50087    69.53%  92832.10
- 130405       1285   1368  113000  48802    70.35%  94470.04
- 131776       1286   1371  114286  47516    71.17%  97216.57
- 133261       1396   1485  115682  46120    72.05%  98103.57
- 134898       1531   1637  117213  44589    73.00%  98952.38
- 136469       1039   1571  118252  43550    73.65% 100322.65
- 137873       1326   1404  119578  42224    74.49% 101307.20
- 139245       1288   1372  120866  40936    75.32% 102986.24
- 140698       1374   1453  122240  39562    76.18% 104718.40
- 142152       1135   1454  123375  38427    76.90% 106859.08
- 143958       1742   1806  125117  36685    77.98% 107281.74
- 145554       1565   1596  126682  35120    78.95% 108534.37
- 146978       1333   1424  128015  33787    79.80% 110719.04
- 148929       1820   1951  129835  31967    80.92% 111195.84
- 150433       1414   1504  131249  30553    81.81% 112843.64
- 152162       1557   1729  132806  28996    82.78% 113470.83
- 153909       1666   1747  134472  27330    83.81% 114073.50
- 155713       1597   1804  136069  25733    84.80% 115262.20
- 157475       1739   1762  137808  23994    85.87% 115957.12
- 159128       1507   1653  139315  22487    86.80% 116548.99
- 160712       1467   1584  140782  21020    87.71% 117114.24
- 161661        828    949  141610  20192    88.23% 118355.42
- 992 faults were identified as detected by implication, test coverage is now 88.54%.
- Fault simulation completed: #faults_simulated=161802, test_coverage=88.54%, CPU time=118355.42
+ 1539           39   1539      39  19161    88.56%   3959.08
+ 2837            9   1298      48  19152    88.57%   6364.83
+ 4166           62   1329     110  19090    88.59%   9854.56
+ 5907           73   1741     183  19017    88.63%  11256.74
+ 7657          188   1750     371  18829    88.75%  13555.91
+ 9317          171   1660     542  18658    88.86%  16030.53
+ 10837         275   1520     817  18383    89.03%  18406.90
+ 12529         148   1692     965  18235    89.12%  22377.48
+ 14054         301   1525    1266  17934    89.30%  24867.83
+ 15797         285   1743    1551  17649    89.48%  28397.99
+ 17271         224   1474    1775  17425    89.61%  31511.60
+ 18878         174   1607    1949  17251    89.72%  33986.89
+ 19059          15    181    1964  17236    89.73%  35001.36
+ Fault simulation completed: #faults_simulated=19200, test_coverage=89.73%, CPU time=35001.36
 ## Reports
 set_faults -fault_coverage
  Warning: Unused gate deletion affects fault coverage calculation. (M245)
