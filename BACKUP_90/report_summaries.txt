@@ -1,0 +1,20 @@
+     Uncollapsed Stuck Fault Summary Report
+ -----------------------------------------------
+ fault class                     code   #faults
+ ------------------------------  ----  ---------
+ Detected                         DT     145374
+ Possibly detected                PT       1078
+ Undetectable                     UD        344
+ ATPG untestable                  AU          0
+ Not detected                     ND      15350
+ -----------------------------------------------
+ total faults                            162146
+ test coverage                            90.18%
+ fault coverage                           89.99%
+ -----------------------------------------------
+            Pattern Summary Report
+ -----------------------------------------------
+ #internal patterns                           0
+ #external patterns (dumpports_gate.evcd.fixed)    409
+     #full_sequential patterns              409
+ -----------------------------------------------

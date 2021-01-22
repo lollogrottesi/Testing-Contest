@@ -1,0 +1,259 @@
+## Build and DRC
+read_netlist ../gate/NangateOpenCellLibrary.tlib -library
+ Begin reading netlist ( ../gate/NangateOpenCellLibrary.tlib )...
+ End parsing Verilog file ../gate/NangateOpenCellLibrary.tlib with 0 errors.
+ End reading netlist: #modules=181, top=AND2_X1, #lines=2744, CPU_time=0.01 sec, Memory=0MB
+read_netlist ../gate/riscv_core.v
+ Begin reading netlist ( ../gate/riscv_core.v )...
+ End parsing Verilog file ../gate/riscv_core.v with 0 errors.
+ End reading netlist: #modules=127, top=riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800, #lines=53910, CPU_time=0.18 sec, Memory=18MB
+run_build_model riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800
+ ------------------------------------------------------------------------------
+ Begin build model for topcut = riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800 ...
+ ------------------------------------------------------------------------------
+ Warning: There were 72 faultable pins lost due to tied gate optimizations. (M126)
+ There were 104908 primitives and 1725 faultable pins removed during model optimizations
+ Warning: Rule B7 (undriven module output pin) was violated 463 times.
+ Warning: Rule B8 (unconnected module input pin) was violated 429 times.
+ Warning: Rule B9 (undriven module internal net) was violated 31 times.
+ Warning: Rule B10 (unconnected module internal net) was violated 459 times.
+ Warning: Rule N20 (underspecified UDP) was violated 7 times.
+ End build model: #primitives=65718, CPU_time=0.36 sec, Memory=30MB
+ ------------------------------------------------------------------------------
+ Begin learning analyses...
+ End learning analyses, total learning CPU time=0.55 sec.
+ ------------------------------------------------------------------------------
+add_po_masks -all
+remove_po_masks instr_req_o
+remove_po_masks instr_addr_o[31]
+remove_po_masks instr_addr_o[30]
+remove_po_masks instr_addr_o[29]
+remove_po_masks instr_addr_o[28]
+remove_po_masks instr_addr_o[27]
+remove_po_masks instr_addr_o[26]
+remove_po_masks instr_addr_o[25]
+remove_po_masks instr_addr_o[24]
+remove_po_masks instr_addr_o[23]
+remove_po_masks instr_addr_o[22]
+remove_po_masks instr_addr_o[21]
+remove_po_masks instr_addr_o[20]
+remove_po_masks instr_addr_o[19]
+remove_po_masks instr_addr_o[18]
+remove_po_masks instr_addr_o[17]
+remove_po_masks instr_addr_o[16]
+remove_po_masks instr_addr_o[15]
+remove_po_masks instr_addr_o[14]
+remove_po_masks instr_addr_o[13]
+remove_po_masks instr_addr_o[12]
+remove_po_masks instr_addr_o[11]
+remove_po_masks instr_addr_o[10]
+remove_po_masks instr_addr_o[9]
+remove_po_masks instr_addr_o[8]
+remove_po_masks instr_addr_o[7]
+remove_po_masks instr_addr_o[6]
+remove_po_masks instr_addr_o[5]
+remove_po_masks instr_addr_o[4]
+remove_po_masks instr_addr_o[3]
+remove_po_masks instr_addr_o[2]
+remove_po_masks instr_addr_o[1]
+remove_po_masks instr_addr_o[0]
+remove_po_masks data_req_o
+remove_po_masks data_we_o
+remove_po_masks data_be_o[3]
+remove_po_masks data_be_o[2]
+remove_po_masks data_be_o[1]
+remove_po_masks data_be_o[0]
+remove_po_masks data_addr_o[31]
+remove_po_masks data_addr_o[30]
+remove_po_masks data_addr_o[29]
+remove_po_masks data_addr_o[28]
+remove_po_masks data_addr_o[27]
+remove_po_masks data_addr_o[26]
+remove_po_masks data_addr_o[25]
+remove_po_masks data_addr_o[24]
+remove_po_masks data_addr_o[23]
+remove_po_masks data_addr_o[22]
+remove_po_masks data_addr_o[21]
+remove_po_masks data_addr_o[20]
+remove_po_masks data_addr_o[19]
+remove_po_masks data_addr_o[18]
+remove_po_masks data_addr_o[17]
+remove_po_masks data_addr_o[16]
+remove_po_masks data_addr_o[15]
+remove_po_masks data_addr_o[14]
+remove_po_masks data_addr_o[13]
+remove_po_masks data_addr_o[12]
+remove_po_masks data_addr_o[11]
+remove_po_masks data_addr_o[10]
+remove_po_masks data_addr_o[9]
+remove_po_masks data_addr_o[8]
+remove_po_masks data_addr_o[7]
+remove_po_masks data_addr_o[6]
+remove_po_masks data_addr_o[5]
+remove_po_masks data_addr_o[4]
+remove_po_masks data_addr_o[3]
+remove_po_masks data_addr_o[2]
+remove_po_masks data_addr_o[1]
+remove_po_masks data_addr_o[0]
+remove_po_masks data_wdata_o[31]
+remove_po_masks data_wdata_o[30]
+remove_po_masks data_wdata_o[29]
+remove_po_masks data_wdata_o[28]
+remove_po_masks data_wdata_o[27]
+remove_po_masks data_wdata_o[26]
+remove_po_masks data_wdata_o[25]
+remove_po_masks data_wdata_o[24]
+remove_po_masks data_wdata_o[23]
+remove_po_masks data_wdata_o[22]
+remove_po_masks data_wdata_o[21]
+remove_po_masks data_wdata_o[20]
+remove_po_masks data_wdata_o[19]
+remove_po_masks data_wdata_o[18]
+remove_po_masks data_wdata_o[17]
+remove_po_masks data_wdata_o[16]
+remove_po_masks data_wdata_o[15]
+remove_po_masks data_wdata_o[14]
+remove_po_masks data_wdata_o[13]
+remove_po_masks data_wdata_o[12]
+remove_po_masks data_wdata_o[11]
+remove_po_masks data_wdata_o[10]
+remove_po_masks data_wdata_o[9]
+remove_po_masks data_wdata_o[8]
+remove_po_masks data_wdata_o[7]
+remove_po_masks data_wdata_o[6]
+remove_po_masks data_wdata_o[5]
+remove_po_masks data_wdata_o[4]
+remove_po_masks data_wdata_o[3]
+remove_po_masks data_wdata_o[2]
+remove_po_masks data_wdata_o[1]
+remove_po_masks data_wdata_o[0]
+run_drc
+ ------------------------------------------------------------------------------
+ Begin scan design rules checking...
+ ------------------------------------------------------------------------------
+ Begin simulating test protocol procedures...
+ Test protocol simulation completed, CPU time=0.00 sec.
+ ------------------------------------------------------------------------------
+ Begin scan chain operation checking...
+ Scan chain operation checking completed, CPU time=0.00 sec.
+ ------------------------------------------------------------------------------
+ Begin clock rules checking...
+ Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 2130 times.
+ Warning: Rule C25 (unstable cell clock input connected from multiple sources) was violated 3225 times.
+ Clock rules checking completed, CPU time=0.26 sec.
+ ------------------------------------------------------------------------------
+ Begin nonscan rules checking...
+ Nonscan cell summary: #DFF=2130  #DLAT=1097  #RAM_outs=0  tla_usage_type=no_clock_tla
+ Nonscan behavior:  #CU=2130  #TLA=1097
+ Nonscan rules checking completed, CPU time=0.00 sec.
+ ------------------------------------------------------------------------------
+ Begin DRC dependent learning...
+ Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.01 sec
+ DRC dependent learning completed, CPU time=0.15 sec.
+ ------------------------------------------------------------------------------
+ DRC Summary Report
+ ------------------------------------------------------------------------------
+ Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 2130 times.
+ Warning: Rule C25 (unstable cell clock input connected from multiple sources) was violated 3225 times.
+ There were 5355 violations that occurred during DRC process.
+ Design rules checking was successful, total CPU time=0.42 sec.
+ ------------------------------------------------------------------------------
+## Load and check patterns
+set_patterns -external dumpports_gate.evcd.fixed  -sensitive -strobe_period { 10 ns } -strobe_offset { 59 ns }
+ End reading 409 patterns, CPU_time = 0.01 sec, Memory = 0MB
+run_simulation -sequential
+ Begin sequential simulation of 409 external patterns.
+  362  data_wdata_o[31]  (exp=0, got=X)
+  362  data_wdata_o[30]  (exp=0, got=X)
+  362  data_wdata_o[29]  (exp=0, got=X)
+  362  data_wdata_o[28]  (exp=0, got=X)
+  362  data_wdata_o[27]  (exp=0, got=X)
+  362  data_wdata_o[26]  (exp=0, got=X)
+  362  data_wdata_o[25]  (exp=0, got=X)
+  362  data_wdata_o[24]  (exp=0, got=X)
+  362  data_wdata_o[23]  (exp=0, got=X)
+  362  data_wdata_o[22]  (exp=0, got=X)
+  362  data_wdata_o[21]  (exp=0, got=X)
+  362  data_wdata_o[20]  (exp=0, got=X)
+  362  data_wdata_o[19]  (exp=0, got=X)
+  362  data_wdata_o[18]  (exp=0, got=X)
+  362  data_wdata_o[17]  (exp=0, got=X)
+  362  data_wdata_o[16]  (exp=0, got=X)
+  362  data_wdata_o[15]  (exp=0, got=X)
+  362  data_wdata_o[14]  (exp=0, got=X)
+  362  data_wdata_o[13]  (exp=0, got=X)
+  362  data_wdata_o[12]  (exp=0, got=X)
+  362  data_wdata_o[11]  (exp=0, got=X)
+  362  data_wdata_o[10]  (exp=0, got=X)
+  362  data_wdata_o[9]  (exp=0, got=X)
+  362  data_wdata_o[8]  (exp=0, got=X)
+  362  data_wdata_o[7]  (exp=0, got=X)
+  362  data_wdata_o[6]  (exp=0, got=X)
+  362  data_wdata_o[5]  (exp=0, got=X)
+  362  data_wdata_o[4]  (exp=0, got=X)
+  362  data_wdata_o[3]  (exp=0, got=X)
+  362  data_wdata_o[2]  (exp=0, got=X)
+  362  data_wdata_o[1]  (exp=0, got=X)
+  362  data_wdata_o[0]  (exp=0, got=X)
+ Simulation completed: #patterns=409/827, #fail_pats=1(1), #failing_meas=32(32), #rejected_pats=0, CPU time=0.23
+## Fault list (select one of the following)
+#add_faults -all 
+#remove_faults RISCY_PMP_pmp_unit_i
+#remove_faults cs_registers_i
+#remove_faults if_stage_i
+#remove_faults ex_stage_i
+#remove_faults if_stage_i/prefetch_128_prefetch_buffer_i 
+#remove_faults id_stage_i/hwloop_regs_i
+#remove_faults if_stage_i/compressed_decoder_i
+#remove_faults id_stage_i/registers_i
+#remove_faults id_stage_i/decoder_i
+#remove_faults id_stage_i/controller_i
+#remove_faults id_stage_i/int_controller_i
+#remove_faults if_stage_i/hwloop_controller_i
+#remove_faults ex_stage_i/alu_i
+#remove_faults ex_stage_i/mult_i
+#remove_faults load_store_unit_i
+#remove_faults RISCY_PMP_pmp_unit_i
+#remove_faults cs_registers_i
+#add_faults load_store_unit_i
+#add_faults if_stage_i/prefetch_128_prefetch_buffer_i 
+#add_faults id_stage_i/hwloop_regs_i
+#add_faults if_stage_i/compressed_decoder_i
+#add_faults id_stage_i/registers_i
+#add_faults id_stage_i/decoder_i
+#add_faults id_stage_i/controller_i
+#add_faults id_stage_i/int_controller_i
+#add_faults if_stage_i/hwloop_controller_i
+#add_faults ex_stage_i/alu_i
+#add_faults ex_stage_i/mult_i
+#add_faults load_store_unit_i
+read_faults fsim_faults.txt -force_retain_code -add
+ 162146 faults were read in and 162146 new faults were added to fault list.
+## Fault simulation
+run_fault_sim -sequential
+ ------------------------------------------------------------------------------
+ Begin sequential fault simulation of 16922 faults on 409 external patterns.
+ -----------------------------------------------------------
+ #faults    pass #faults   cum. #faults     test    process
+ simulated  detect/total   detect/active  coverage  CPU time
+ ---------  -------------  -------------  --------  --------
+ 1543           13   1543      13  16909    89.88%      6.05
+ 2841          243   1298     256  16666    90.04%     10.43
+ 4115           19   1274     275  16647    90.04%     17.17
+ 5882            0   1767     275  16647    90.04%     19.05
+ 7611            0   1729     275  16647    90.04%     22.76
+ 9253            3   1642     278  16644    90.04%     26.47
+ 10908           4   1655     282  16640    90.05%     30.53
+ 12558          10   1650     292  16630    90.05%     37.16
+ 14296           2   1738     294  16628    90.05%     41.80
+ 15798          71   1502     365  16557    90.10%     45.34
+ 16781         129    983     494  16428    90.18%     47.57
+ Fault simulation completed: #faults_simulated=16922, test_coverage=90.18%, CPU time=47.57
+## Reports
+set_faults -fault_coverage
+ Warning: Unused gate deletion affects fault coverage calculation. (M245)
+report_faults -level {5 100} > report_faults_hierarchy.txt
+report_faults -level {100 1} -verbose > report_faults_verbose.txt
+report_summaries > report_summaries.txt
+write_faults fsim_faults.txt -replace -all
+ Write faults completed: 162146 faults were written into file "fsim_faults.txt".
