@@ -1,0 +1,149 @@
+//li s11, 0xFFFFFFFF
+//sw s11, 0(s11)
+li s11, 0x00200000
+p.lb s5, 0(s11!)
+sw s5, 0(s11)
+p.lbu s5, 0(s11!)
+sw s5, 0(s11)
+p.lh s5, 0(s11!)
+sw s5, 0(s11)
+p.lhu s5, 0(s11!)
+sw s5, 0(s11)
+p.lw s5, 0(s11!)
+sw s5, 0(s11)
+p.lb s5, x0(s11!)
+sw s5, 0(s11)
+p.lbu s5, x0(s11!)
+sw s5, 0(s11)
+p.lh s5, x0(s11!)
+sw s5, 0(s11)
+p.lhu s5, x0(s11!)
+sw s5, 0(s11)
+p.lw s5, x0(s11!)
+sw s5, 0(s11)
+p.lb s5, x0(s11)
+sw s5, 0(s11)
+p.lbu s5, x0(s11)
+sw s5, 0(s11)
+p.lh s5, x0(s11)
+sw s5, 0(s11)
+p.lhu s5, x0(s11)
+sw s5, 0(s11)
+p.lw s5, x0(s11)
+sw s5, 0(s11)
+sw x0, 0(s11)
+p.lb s5, 0(s11!)
+sw s5, 0(s11)
+p.lbu s5, 0(s11!)
+sw s5, 0(s11)
+p.lh s5, 0(s11!)
+sw s5, 0(s11)
+p.lhu s5, 0(s11!)
+sw s5, 0(s11)
+p.lw s5, 0(s11!)
+sw s5, 0(s11)
+p.lb s5, x0(s11!)
+sw s5, 0(s11)
+p.lbu s5, x0(s11!)
+sw s5, 0(s11)
+p.lh s5, x0(s11!)
+sw s5, 0(s11)
+p.lhu s5, x0(s11!)
+sw s5, 0(s11)
+p.lw s5, x0(s11!)
+sw s5, 0(s11)
+p.lb s5, x0(s11)
+sw s5, 0(s11)
+p.lbu s5, x0(s11)
+sw s5, 0(s11)
+p.lh s5, x0(s11)
+sw s5, 0(s11)
+p.lhu s5, x0(s11)
+sw s5, 0(s11)
+p.lw s5, x0(s11)
+sw s5, 0(s11)
+li s9, 0xFFFFFFFF
+li s10, 0x11111111
+li s1, 0
+li s2, 0
+li s11, 0x00200000
+loopld:
+	p.adduN s3, x0, s11, 0
+	p.lw s5, s2(s3!)
+	sw s5, 0(s11)
+	sw s3, 0(s11)
+	beq s2, s9, endld
+	p.adduN s2, s2, s10, 0
+	j loopld
+endld: 
+	xor s2, s2, s2
+	beq s1, s9, endld2
+	p.adduN s1, s1, s10, 0
+	j loopld
+endld2:
+	li s5, 0xFFFFFFFF
+	li s4, 4
+	li s6, 8
+	li s11, 0x00200000
+	p.sb s5, 4(s11!)
+	p.sb x0, 4(s11!)
+	p.sh s5, 4(s11!)
+	p.sh x0, 4(s11!)
+	p.sw s5, 4(s11!)
+	p.sw x0, 4(s11!)
+	p.sb s5, s4(s11!)
+	p.sb x0, s4(s11!)
+	p.sh s5, s4(s11!)
+	p.sh x0, s4(s11!)
+	p.sw s5, s4(s11!)
+	p.sw x0, s4(s11!)
+	p.sb s5, s4(s11)
+	p.sb x0, s4(s11)
+	p.sh s5, s6(s11)
+	p.sw s5, x0(s11)
+	p.sw x0, x0(s11)
+	sw s5, 0(x0)
+	p.lb s4, 1(s11!)
+	p.lw s4, 1(s11!)
+	p.lh s4, 1(s11!)
+	p.lbu s4, 2(s11!)
+	p.lhu s4, 1(s11!)
+	li s11, 0
+	p.sb s5, 1(s11!)
+	p.sw x0, 1(s11!)
+	p.sh s5, 1(s11!)
+	li s11, 0
+	li s1, 1
+	li s2, 2
+	li s3, 3
+	p.sb x0, s1(s11)
+	p.sh x0, s2(s11)
+	p.sw s5, s3(s11)
+	li s2, 0xFFFFFFFF
+	li s8, 0
+	li s7, 0x0020000F
+	p.sw s2, 1(s7!)
+	sw s7, 0(s11)
+	p.sw s2, 0(s7!)
+	sw s7, 0(s11)
+	p.sw s2, 0x3F(s7!)
+	sw s7, 0(s11)
+	p.sw s2, 0(s8!)
+	sw s8, 0(s11)
+	p.sw s2, 0x3F(s8!)
+	sw s8, 0(s11)
+	li s7, 0x002000FF
+	p.sw s2, 0x20(s7!)
+	sh s7, 0(s11)
+	p.sw s2, 0(s7!)
+	sw s7, 0(s11)
+	sw s7, 0(s11)
+	p.sb x0, 0(s8!)
+	sw s8, 0(s11)
+	sw s8, 0(s11)
+	//p.sb s2, 1(s7!)
+	//p.sh s2, 0(s7!)
+	//p.sw s2, 0(s8!)
+	p.sb s2, s3(s11!)
+	p.sh s2, s3(s11!)
+	p.sw s2, s3(s11!)
