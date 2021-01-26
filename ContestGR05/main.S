@@ -62,11 +62,11 @@ PUSH_ALL()
 POP_ALL()
 
 PUSH_ALL()
-#include "GR04_TEST_SUITE.s"
+#include "TestModules/GR04_TEST_SUITE.s"
 POP_ALL()
 
 PUSH_ALL()
-#include "GR08_TEST_SUITE.s"
+#include "TestModules/GR08_TEST_SUITE.s"
 POP_ALL()
 
 la sp, _sp
