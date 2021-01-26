@@ -144,13 +144,13 @@ li                  x28,    0x0e5dd2a8
 li                  x23,    0x00203d08
 sw                  x28,    0(x23)
 lw                  x5,     0(x23)
-li                  x23,    0x00101b59
+li                  x23,    0x00201b59
 sw                  x5,     0(x23)
 li                  x19,    0x8e0de182
 li                  x17,    0x00203a70
 sw                  x19,    0(x17)
 lw                  x18,    0(x17)
-li                  x17,    0x001057dd
+li                  x17,    0x002057dd
 sw                  x18,    0(x17)
 li                  x7,     0x86a8e2d
 li                  x18,    0x0020564b
@@ -162,13 +162,13 @@ li                  x4,     0x7c8e5b75
 li                  x28,    0x00204546
 sh                  x4,     0(x28)
 lh                  x1,     0(x28)
-li                  x28,    0x00106897
+li                  x28,    0x00206897
 sw                  x1,     0(x28)
 li                  x11,    0x3dff324a
 li                  x24,    0x00201b2d
 sh                  x11,    0(x24)
 lh                  x10,    0(x24)
-li                  x24,    0x00107025
+li                  x24,    0x00207025
 sw                  x10,    0(x24)
 li                  x18,    0x11f0a287
 li                  x12,    0x002069b0
@@ -186,7 +186,7 @@ li                  x31,    0xd17f550f
 li                  x5,     0x00206fa7
 sb                  x31,    0(x5)
 lb                  x27,    0(x5)
-li                  x5,     0x0010531c
+li                  x5,     0x0020531c
 sw                  x27,    0(x5)
 
 addi                x5,     x0,     1
@@ -231,36 +231,5 @@ p.lbu               x5,     x5(x6!)
 sw                  x5,     0(x31)
 sw                  x6,     0(x31)
 p.lbu               x5,     x5(x6)
-sw                  x5,     0(x31)
-sw                  x6,     0(x31)
-//NEW
-li x6, 0x00200000
-p.lh                x5,     1(x6!)
-sw                  x5,     0(x31)
-sw                  x6,     0(x31)
-p.lh                x5,     x5(x6!)
-sw                  x5,     0(x31)
-sw                  x6,     0(x31)
-p.lh                x5,     x5(x6)
-sw                  x5,     0(x31)
-sw                  x6,     0(x31)
-addi                x6,     x31,     0
-p.lhu               x5,     1(x6!)
-sw                  x5,     0(x31)
-sw                  x6,     0(x31)
-p.lhu               x5,     x5(x6!)
-sw                  x5,     0(x31)
-sw                  x6,     0(x31)
-p.lhu               x5,     x5(x6)
-sw                  x5,     0(x31)
-sw                  x6,     0(x31)
-addi                x6,     x31,     0
-p.lw                x5,     1(x6!)
-sw                  x5,     0(x31)
-sw                  x6,     0(x31)
-p.lw                x5,     x5(x6!)
-sw                  x5,     0(x31)
-sw                  x6,     0(x31)
-p.lw                x5,     x5(x6)
 sw                  x5,     0(x31)
 sw                  x6,     0(x31)
