@@ -138,7 +138,7 @@ li                  x3,     0xc2c76c49
 li                  x4,     0x00200c91
 sw                  x3,     0(x4)
 lw                  x3,     0(x4)
-li                  x4,     0x001047ba
+li                  x4,     0x002047ba
 sw                  x3,     0(x4)
 li                  x28,    0x0e5dd2a8
 li                  x23,    0x00203d08
@@ -174,7 +174,7 @@ li                  x18,    0x11f0a287
 li                  x12,    0x002069b0
 sb                  x18,    0(x12)
 lb                  x2,     0(x12)
-li                  x12,    0x001077f8
+li                  x12,    0x002077f8
 sw                  x2,     0(x12)
 li                  x2,     0xd38130eb
 li                  x16,    0x00201514
