@@ -59,6 +59,7 @@ PUSH_ALL()
 #include "TestModules/GR14_TEST_CSR.S"
 #include "TestModules/simple_hwl.S"
 #inlcude "TestModules/my_ls_test.S"
+#inlcude "TestModules/my_ls_additional_test.S"
 POP_ALL()
 
 PUSH_ALL()
