@@ -1,0 +1,5 @@
+#include "TestModules/GR04_test_self.S"
+#include "TestModules/GR04_test_regs.S" 
+#include "TestModules/GR04_test_jumping.S" 
+#include "TestModules/GR04_test_alu.S" 
+#include "TestModules/GR04_test_mul.S"
